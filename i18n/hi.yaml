@@ -54,7 +54,7 @@ ui:
   reporting_limit: "संभवतः रिपोर्टिंग-सीमा मान"   # REVIEW: Hindi reviewer
   no_table: रिपोर्ट में तालिका नहीं   # REVIEW: Hindi reviewer
   scope_shift: "दूसरे दृश्य ({other}) में क्रम {n} स्थान बदलता है।"   # REVIEW: Hindi reviewer
-  footer: "कोई भाषा मॉडल नहीं, कोई नेटवर्क कॉल नहीं। हर संख्या MPPCB रिपोर्ट के पृष्ठ से जुड़ी है। भार rules.yaml में प्रस्तावित हैं।"   # REVIEW: Hindi reviewer
+  footer: "वैकल्पिक AI व्याख्या को छोड़कर सब कुछ ऑफ़लाइन चलता है। हर संख्या MPPCB रिपोर्ट के पृष्ठ से जुड़ी है। भार rules.yaml में प्रस्तावित हैं।"   # REVIEW: Hindi reviewer
   nav_plan: कार्य योजना   # REVIEW: Hindi reviewer
   nav_help: उपयोग कैसे करें   # REVIEW: Hindi reviewer
   skip: मुख्य सामग्री पर जाएं   # REVIEW: Hindi reviewer
@@ -176,6 +176,62 @@ ui:
   kind_note: "दर्ज = MPPCB रिपोर्ट की रीडिंग। गणना = अंक-गणना प्रणाली से निकाला गया। सुझाव = अधिकारी के निर्णय के लिए मार्गदर्शन।"   # REVIEW: Hindi reviewer
   verify_q: "कार्रवाई से पहले जांचें"   # REVIEW: Hindi reviewer
   brief_review: "प्रस्तावित कामों को निर्देश के रूप में उपयोग से पहले जिम्मेदार अधिकारी की समीक्षा जरूरी है।"   # REVIEW: Hindi reviewer
+  nav_upload: "डेटा जोड़ें"   # REVIEW: Hindi reviewer
+  up_title: "रीडिंग जोड़ें और क्रम का पूर्वावलोकन देखें"   # REVIEW: Hindi reviewer
+  up_lede: "नई जांच के परिणाम CSV फाइल में अपलोड करें और देखें कि क्रम कैसे बदलेगा। फाइल केवल आपके ब्राउज़र में पढ़ी जाती है: कहीं भेजी नहीं जाती, सहेजी नहीं जाती, और पूछें स्क्रीन उसका उपयोग नहीं करती। यह पूर्वावलोकन है, आधिकारिक क्रम नहीं।"   # REVIEW: Hindi reviewer
+  up_how: "टेम्पलेट डाउनलोड करें, हर रीडिंग की एक पंक्ति भरें, फाइल चुनें, फिर जांच रिपोर्ट और क्रम का पूर्वावलोकन देखें।"   # REVIEW: Hindi reviewer
+  up_template: "टेम्पलेट डाउनलोड करें (CSV)"   # REVIEW: Hindi reviewer
+  up_columns_h: "फाइल में क्या चाहिए"   # REVIEW: Hindi reviewer
+  up_columns: "हर रीडिंग की एक पंक्ति। जरूरी कॉलम: year, festival (Ganesh या Durga), site (घाट सूची के अनुसार ठीक वही नाम), phase (pre, during या after), parameter (13 ज्ञात मानकों में से एक), source_page, और value या flag। अन्य कॉलम अनदेखे रहते हैं।"   # REVIEW: Hindi reviewer
+  up_value_help: "संख्या value में लिखें। पहचान सीमा से नीचे के लिए flag में BDL या ND लिखें। जिस रीडिंग का नमूना नहीं लिया गया, उसके लिए value खाली छोड़ें और flag में not sampled, * या ** लिखें। BDL या अनुपलब्ध रीडिंग के लिए कभी 0 न लिखें।"   # REVIEW: Hindi reviewer
+  up_source_help: "source_page आधिकारिक रिपोर्ट का वह पृष्ठ है जहां रीडिंग छपी है। नए वर्षों के लिए इस ऐप में अभी रिपोर्ट लिंक नहीं है।"   # REVIEW: Hindi reviewer
+  up_choose: "CSV फाइल चुनें"   # REVIEW: Hindi reviewer
+  up_drop: "या यहां छोड़ें"   # REVIEW: Hindi reviewer
+  up_dup_h: "अगर रीडिंग पहले से डेटा में है"   # REVIEW: Hindi reviewer
+  up_dup_keep: "मौजूदा रीडिंग रखें"   # REVIEW: Hindi reviewer
+  up_dup_replace: "अपलोड की गई रीडिंग लें"   # REVIEW: Hindi reviewer
+  up_clear: "फाइल हटाएं"   # REVIEW: Hindi reviewer
+  up_nofile: "अभी कोई फाइल नहीं चुनी गई।"   # REVIEW: Hindi reviewer
+  up_report_h: "जांच रिपोर्ट"   # REVIEW: Hindi reviewer
+  up_file: "{name}: {n} पंक्तियां पढ़ी गईं।"   # REVIEW: Hindi reviewer
+  up_ok: "{n} पंक्तियां सही हैं: {valid} मापी गईं, {bdl} BDL, {missing} नमूना नहीं।"   # REVIEW: Hindi reviewer
+  up_errors: "{n} समस्याएं मिलीं। फाइल सुधारकर दोबारा अपलोड करने तक कुछ नहीं जोड़ा जाएगा।"   # REVIEW: Hindi reviewer
+  up_err_row: "पंक्ति {row}: {msg}"   # REVIEW: Hindi reviewer
+  up_more: "…और {n} समस्याएं।"   # REVIEW: Hindi reviewer
+  up_e_empty: "फाइल में कोई डेटा पंक्ति नहीं है।"   # REVIEW: Hindi reviewer
+  up_e_big: "फाइल बहुत बड़ी है (सीमा 1 MB और 20,000 पंक्तियां)।"   # REVIEW: Hindi reviewer
+  up_e_columns: "कॉलम नहीं मिला: {col}।"   # REVIEW: Hindi reviewer
+  up_e_year: "year चार अंकों का वर्ष होना चाहिए, जैसे 2026।"   # REVIEW: Hindi reviewer
+  up_e_festival: "festival Ganesh या Durga होना चाहिए।"   # REVIEW: Hindi reviewer
+  up_e_site: "site घाट सूची में नहीं है: {site}।"   # REVIEW: Hindi reviewer
+  up_e_phase: "phase pre, during या after होना चाहिए।"   # REVIEW: Hindi reviewer
+  up_e_param: "parameter 13 ज्ञात मानकों में से नहीं है: {param}।"   # REVIEW: Hindi reviewer
+  up_e_page: "source_page 1 से 999 तक की पूर्ण संख्या होनी चाहिए।"   # REVIEW: Hindi reviewer
+  up_e_flag: "flag BDL, ND, not sampled, * या ** होना चाहिए।"   # REVIEW: Hindi reviewer
+  up_e_both: "value या flag में से एक दें, दोनों नहीं।"   # REVIEW: Hindi reviewer
+  up_e_novalue: "value दें, या BDL, ND या not sampled के लिए flag दें।"   # REVIEW: Hindi reviewer
+  up_e_value: "value संख्या नहीं है। BDL, ND या not sampled के लिए flag कॉलम उपयोग करें।"   # REVIEW: Hindi reviewer
+  up_e_neg: "value ऋणात्मक नहीं हो सकता।"   # REVIEW: Hindi reviewer
+  up_e_dup_file: "यही रीडिंग इस फाइल की पंक्ति {row} में पहले से है।"   # REVIEW: Hindi reviewer
+  up_w_dup: "डेटा में पहले से मौजूद रीडिंग: {n}। {action}"   # REVIEW: Hindi reviewer
+  up_w_dup_keep: "मौजूदा रीडिंग रखी गई हैं और ये पंक्तियां छोड़ी गई हैं।"   # REVIEW: Hindi reviewer
+  up_w_dup_replace: "पूर्वावलोकन में अपलोड की गई रीडिंग उनकी जगह लेती हैं।"   # REVIEW: Hindi reviewer
+  up_w_years: "ऐसे वर्ष जो मौजूदा डेटा में नहीं हैं: {years}। नया वर्ष जुड़ने से हर घाट के लिए अपेक्षित रीडिंग बढ़ती हैं, इसलिए उस वर्ष में रीडिंग न वाले घाटों की डेटा उपलब्धता घटती है। स्रोत लिंक के लिए src/sources.py में रिपोर्ट फाइल जोड़नी होगी।"   # REVIEW: Hindi reviewer
+  up_added_h: "फाइल क्या जोड़ती है"   # REVIEW: Hindi reviewer
+  up_col_added: "रीडिंग"   # REVIEW: Hindi reviewer
+  up_preview_h: "क्रम का पूर्वावलोकन"   # REVIEW: Hindi reviewer
+  up_preview_note: "आपके ब्राउज़र में आधिकारिक क्रम वाले ही नियमों (rules.yaml) से निकाला गया; फाइल के बिना यह आधिकारिक क्रम से ठीक मेल खाता है। यह सहेजा नहीं जाता और आधिकारिक नहीं है। क्रम का दायरा, संक्षिप्त नोट, कार्य योजना और AI उत्तर अपडेट नहीं होते।"   # REVIEW: Hindi reviewer
+  up_col_now: "अभी"   # REVIEW: Hindi reviewer
+  up_col_with: "आपकी फाइल के साथ"   # REVIEW: Hindi reviewer
+  up_col_change: "बदलाव"   # REVIEW: Hindi reviewer
+  up_up: "{n} ऊपर"   # REVIEW: Hindi reviewer
+  up_down: "{n} नीचे"   # REVIEW: Hindi reviewer
+  up_same: "कोई बदलाव नहीं"   # REVIEW: Hindi reviewer
+  up_new: "क्रम में नया"   # REVIEW: Hindi reviewer
+  up_download: "जांची गई पंक्तियां डाउनलोड करें (CSV)"   # REVIEW: Hindi reviewer
+  up_publish: "इन रीडिंग को आधिकारिक बनाने के लिए: उन्हें रिपोर्ट के पृष्ठों से मिलाएं, पंक्तियों को data/bhopal_ghats_2023_2025.csv में जोड़ें, नया वर्ष rules.yaml और src/sources.py में जोड़ें, फिर बिल्ड और टेस्ट चलाएं (डेटा और पद्धति देखें)।"   # REVIEW: Hindi reviewer
+  up_view: "{scope} दृश्य का उपयोग।"   # REVIEW: Hindi reviewer
+  up_none_added: "जोड़ने के लिए कोई पंक्ति नहीं, इसलिए पूर्वावलोकन आधिकारिक क्रम जैसा ही है।"   # REVIEW: Hindi reviewer
 flag:
   identity_uncertain: पहचान अनिश्चित, दो अलग जगह हो सकती हैं   # REVIEW: Hindi reviewer
   limited_data: सीमित डेटा   # REVIEW: Hindi reviewer
@@ -322,7 +378,7 @@ help:                       # BR-63 उपयोग मार्गदर्श�
         - t: घाट जोड़ें या बदलें   # REVIEW: Hindi reviewer
           d: "ghats.yaml बदलें, जैसे किसी घाट को 2026 के लिए निर्धारित दर्ज करना, फिर दोबारा बनाएं।"   # REVIEW: Hindi reviewer
         - t: अगले वर्ष की रीडिंग जोड़ें   # REVIEW: Hindi reviewer
-          d: "भोपाल CSV में उन्हीं कॉलम में पंक्तियां जोड़ें, rules.yaml में वर्ष और src/sources.py में रिपोर्ट फाइल जोड़ें, फिर दोबारा बनाएं और टेस्ट चलाएं।"   # REVIEW: Hindi reviewer
+          d: "नई पंक्तियों की जांच और क्रम का पूर्वावलोकन देखने के लिए डेटा जोड़ें स्क्रीन उपयोग करें, फिर जांची गई पंक्तियां भोपाल CSV में जोड़ें, rules.yaml में वर्ष और src/sources.py में रिपोर्ट फाइल जोड़ें, फिर दोबारा बनाएं और टेस्ट चलाएं।"   # REVIEW: Hindi reviewer
         - t: इसे होस्ट करें   # REVIEW: Hindi reviewer
           d: "docs फ़ोल्डर को किसी भी वेब सर्वर पर कॉपी करें, जैसे MPSeDC सर्वर या GitHub Pages। यह सीधे डिस्क से भी खुलता है।"   # REVIEW: Hindi reviewer
         - t: संख्याएं जांचें   # REVIEW: Hindi reviewer

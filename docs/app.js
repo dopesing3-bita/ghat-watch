@@ -106,7 +106,8 @@
     var ds = D.dataset, sc = ds.status_counts, y = ds.years;
     return '<p class="snapshot">' + esc(ui("snapshot", { rows: ds.rows.toLocaleString("en-IN"), years: y[0] + "–" + y[y.length - 1],
       ghats: ds.ghats_with_data, nohist: ds.ghats_in_register - ds.ghats_with_data, valid: sc.valid, bdl: sc.bdl, missing: sc.missing })) +
-      ' <a href="#/data" class="textlink">' + esc(ui("snapshot_link")) + " →</a></p>";
+      ' <a href="#/data" class="textlink">' + esc(ui("snapshot_link")) + " →</a> · " +
+      '<a href="#/upload" class="textlink">' + esc(ui("nav_upload")) + " →</a></p>";
   }
 
   function howto() {
@@ -601,7 +602,7 @@
   /* Page chrome: utility bar, header, view bar, notice, footer */
   function footer() {
     var links = [["#/", "nav_overview"], ["#/analytics", "nav_analytics"], ["#/ask", "nav_ask"], ["#/plan", "nav_plan"],
-      ["#/brief", "nav_brief"], ["#/data", "nav_data"], ["#/help", "nav_help"]];
+      ["#/brief", "nav_brief"], ["#/upload", "nav_upload"], ["#/data", "nav_data"], ["#/help", "nav_help"]];
     var reports = Object.keys(D.reports).sort().map(function (y) {
       return '<li><a href="' + esc(D.reports[y]) + '" target="_blank" rel="noopener">' + esc(ui("report_year", { year: y })) + "</a></li>";
     }).join("") + '<li><a href="' + esc(D.criteria_url) + '" target="_blank" rel="noopener">' + esc(ui("cpcb_criteria")) + "</a></li>";
@@ -688,7 +689,7 @@
   }
 
   /* Shared with analytics.js and assistant.js, which register extra screens in GW.screens. */
-  var NAV = ["ranking", "analytics", "ask", "plan", "brief", "data", "help"];
+  var NAV = ["ranking", "analytics", "ask", "plan", "brief", "upload", "data", "help"];
   var GW = window.GW = {
     D: D, state: state, ui: ui, gl: gl, esc: esc, fill: fill, name: name, rows: rows, find: find, pct: pct, tw: tw,
     srcLink: srcLink, tierBadge: tierBadge, badges: badges, kind: kind, save: save, load: load, route: route, wa: wa,

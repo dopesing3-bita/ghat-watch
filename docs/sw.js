@@ -1,7 +1,7 @@
 /* Ghat Watch offline cache. Only used when the app is served over http(s); opening index.html from disk skips it.
    Network first for the app's own files, so a rebuilt data.js shows up at once; the cached copy is used offline. */
-var CACHE = "ghat-watch-v2";
-var FILES = ["./", "index.html", "style.css", "app.js", "data.js", "assist-core.js", "analytics.js", "assistant.js", "icon.svg", "manifest.webmanifest",
+var CACHE = "ghat-watch-v3";
+var FILES = ["./", "index.html", "style.css", "app.js", "data.js", "assist-core.js", "analytics.js", "assistant.js", "upload-core.js", "upload.js", "icon.svg", "manifest.webmanifest",
   "fonts/cormorant-garamond-latin.woff2",
   "fonts/poppins-300-latin.woff2", "fonts/poppins-400-latin.woff2", "fonts/poppins-500-latin.woff2", "fonts/poppins-600-latin.woff2",
   "fonts/poppins-300-devanagari.woff2", "fonts/poppins-400-devanagari.woff2", "fonts/poppins-500-devanagari.woff2",

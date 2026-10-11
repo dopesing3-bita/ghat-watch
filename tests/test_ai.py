@@ -53,7 +53,7 @@ def test_new_strings_exist_in_both_languages():
 
 def test_ui_keys_used_by_new_modules_exist():
     i = load_i18n()["en"]
-    for f in ("analytics.js", "assistant.js", "app.js"):
+    for f in ("analytics.js", "assistant.js", "app.js", "upload.js"):
         js = (DOCS / f).read_text(encoding="utf-8")
         used = set(re.findall(r'\bui\("(\w+)"[,)]', js))
         assert used <= set(i["ui"]), (f, used - set(i["ui"]))
@@ -87,13 +87,13 @@ def test_env_files_are_git_ignored():
 
 def test_browser_code_holds_no_key_and_calls_only_the_relative_api():
     """BR-87: the browser never talks to Gemini directly; only to same-origin api/gemini, when the user asks."""
-    for f in ("assistant.js", "analytics.js", "assist-core.js"):
+    for f in ("assistant.js", "analytics.js", "assist-core.js", "upload.js", "upload-core.js"):
         js = (DOCS / f).read_text(encoding="utf-8")
         assert not re.search(r"https?://", js), f
         assert "GEMINI_API_KEY" not in js and "generativelanguage" not in js
     js = (DOCS / "assistant.js").read_text(encoding="utf-8")
     assert set(re.findall(r'fetch\("([^"]+)"', js)) == {"api/gemini"}
-    for f in ("analytics.js", "assist-core.js", "data.js"):
+    for f in ("analytics.js", "assist-core.js", "data.js", "upload.js", "upload-core.js"):
         assert "fetch(" not in (DOCS / f).read_text(encoding="utf-8")
     api = (ROOT / "api" / "gemini.js").read_text(encoding="utf-8")
     assert "process.env.GEMINI_API_KEY" in api
@@ -102,7 +102,7 @@ def test_browser_code_holds_no_key_and_calls_only_the_relative_api():
 def test_service_worker_never_caches_the_api():
     sw = (DOCS / "sw.js").read_text(encoding="utf-8")
     assert 'url.pathname.indexOf("/api/") === 0) return' in sw
-    for f in ("assist-core.js", "analytics.js", "assistant.js"):
+    for f in ("assist-core.js", "analytics.js", "assistant.js", "upload-core.js", "upload.js"):
         assert f'"{f}"' in sw
 
 
@@ -127,3 +127,30 @@ def test_ai_endpoint_and_evidence_engine_js_suite():
     r = subprocess.run(["node", "--test", *files], cwd=ROOT, capture_output=True, text=True, timeout=120, env=env)
     assert r.returncode == 0, r.stdout[-3000:] + r.stderr[-2000:]
     assert re.search(r"# pass (\d+)|ℹ pass (\d+)", r.stdout)
+
+
+def test_upload_rules_are_exported_from_rules_yaml(data):
+    """BR-91: the browser preview scores with the same weights, tiers and flags as the Python engine."""
+    from src.config import load_rules
+    r = load_rules()
+    assert data["rules"]["weights"] == r["weights"] and data["rules"]["tiers"] == r["tiers"]
+    assert data["rules"]["flags"] == {"missing": r["data"]["missing_flags"], "bdl": r["data"]["bdl_flags"]}
+    assert data["rules"]["confidence"]["years"] == r["confidence"]["years"]
+
+
+def test_upload_strings_exist_in_both_languages_and_are_used():
+    i = load_i18n()
+    ups = {k for k in i["en"]["ui"] if k.startswith("up_")} | {"nav_upload"}
+    assert ups == {k for k in i["hi"]["ui"] if k.startswith("up_")} | {"nav_upload"}
+    js = (DOCS / "upload.js").read_text(encoding="utf-8")
+    used = set(re.findall(r'ui\("(\w+)"', js)) | {"up_e_" + c for c in re.findall(r'code: "(\w+)"', js)}
+    assert {u for u in used if u.startswith("up_") and not u.endswith("_")} <= ups
+    core = (DOCS / "upload-core.js").read_text(encoding="utf-8")
+    codes = set(re.findall(r'err\(rowNo, "(\w+)"', core)) | {"empty", "big", "columns"}
+    assert {"up_e_" + c for c in codes} <= ups, {"up_e_" + c for c in codes} - ups
+
+
+def test_service_worker_files_exist():
+    sw = (DOCS / "sw.js").read_text(encoding="utf-8")
+    for f in re.findall(r'"([\w./-]+\.(?:js|css|html|svg|webmanifest|woff2))"', sw):
+        assert (DOCS / f).is_file(), f

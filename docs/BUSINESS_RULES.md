@@ -72,6 +72,15 @@ Weights and thresholds are proposed policy choices, not science. They live in `r
 | BR-86 | Reliability: 25-second total deadline, at most 3 attempts for transient failures, no retry on quota exhaustion, a clear error and retry button otherwise. Never invent an answer to avoid an error. |
 | BR-87 | Secrets and network: the Gemini key is read only from the server-side `GEMINI_API_KEY`; the browser calls only the same-origin `api/gemini` and only when the user asks; AI replies are never cached; the static app works without the endpoint. |
 
+## Adding readings (upload preview)
+
+| ID | Rule |
+|---|---|
+| BR-90 | Upload: a CSV of up to 1 MB and 20,000 rows is read in the browser only. It is never sent anywhere, saved, cached or given to the AI assistant. Required columns: year, festival, site, phase, parameter, source_page, and value or flag. Every row is checked: a four-digit year, festival Ganesh or Durga, a site in the ghat list, phase pre, during or after, one of the 13 known parameters, a page of 1 to 999, a non-negative number or a flag (BDL, ND, not sampled, * or **), not both, and no reading repeated in the file. Any problem blocks the preview and is listed with its row number. |
+| BR-91 | Status of an uploaded reading follows BR-01 and BR-02: BDL and ND are BDL, not sampled and blanks are missing, and neither is ever stored as 0. |
+| BR-92 | Duplicates: a reading already in the data is kept (default) or replaced by the uploaded one, as the user chooses. It is always reported. |
+| BR-93 | Preview ranking: worked out in the browser by a port of the scoring engine using the weights, tiers and flags that the build exports from rules.yaml. With no file it reproduces the official score, tier, rank and coverage of every ghat exactly (tested in both views). Rank ranges, the brief, the action plan and AI answers are not recomputed. A new year adds expected readings for every ghat, so coverage of ghats without readings in that year goes down; ghats under the coverage limit are marked "Limited data". The preview is never labelled official. To publish, the checked rows are appended to the CSV, the year is added in rules.yaml and src/sources.py, and the build and tests are run. |
+
 ## The brief
 
 | ID | Rule |

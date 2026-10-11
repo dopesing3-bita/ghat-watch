@@ -557,3 +557,20 @@ body.hi .sub-h { text-transform: none; letter-spacing: 0; font-size: .82rem; }
 }
 .legend { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem 1.3rem; margin: 0 0 .4rem; padding: 0; font-size: .78rem; color: var(--ink-2); }
 @media (max-width: 1440px) { .subtitle { display: none; } }
+
+/* add data */
+.upload { max-width: 56rem; }
+.up-box { margin: 1rem 0; padding: 1.4rem; background: var(--card); border: 2px dashed var(--line-2); transition: border-color .25s, background .25s; }
+.up-box.over { border-color: var(--teal); background: #EAF2F3; }
+.filebtn { display: inline-flex; position: relative; }
+.filebtn input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+.filebtn span { display: inline-flex; align-items: center; min-height: 2.75rem; padding: .6rem 1.4rem; background: var(--teal); color: var(--cream); font-size: .86rem; font-weight: 500; border-radius: 2px; }
+.filebtn:focus-within span { outline: 3px solid var(--focus); outline-offset: 2px; }
+.dups { margin: 1rem 0 .5rem; padding: 0; border: 0; font-size: .86rem; }
+.dups legend { padding: 0; margin-bottom: .3rem; font-size: .72rem; color: var(--muted); }
+.dups label { margin-right: 1.2rem; }
+.okline { padding: .6rem .8rem; background: #E3EEF0; border-left: 2px solid var(--teal); font-size: .88rem; }
+td.nw { white-space: nowrap; }
+.pickbar button { min-height: 2.75rem; padding: .6rem 1.2rem; border: 1px solid var(--teal); background: var(--teal); color: var(--cream); font-size: .84rem; font-weight: 500; cursor: pointer; border-radius: 2px; }
+.pickbar button:hover { background: var(--teal-dk); }
+@media print { .upload, .up-box { display: none !important; } }

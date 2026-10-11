@@ -22,7 +22,7 @@ To rebuild the data after editing `rules.yaml`, `ghats.yaml` or the CSV (Python 
 
 3. `python3.11 -m venv .venv && .venv/bin/pip install -r requirements.txt`
 4. `.venv/bin/python -m src.build` writes `docs/data.js` and prints the ranked table.
-5. `.venv/bin/pytest` runs the 66 Python tests, including the 21 mocked AI tests in `tests/js` (needs Node.js 18 or newer; no network and no API credits used).
+5. `.venv/bin/pytest` runs the 69 Python tests, including the 30 JavaScript tests in `tests/js` (21 mocked AI, 9 upload) (needs Node.js 18 or newer; no network and no API credits used).
 
 **With AI explanations, locally:** `cp .env.example .env.local`, put your key in it, then `set -a; . ./.env.local; set +a; node tools/serve.js` and open http://localhost:8787. Without a key the same server runs everything except AI.
 
@@ -34,8 +34,9 @@ To rebuild the data after editing `rules.yaml`, `ghats.yaml` or the CSV (Python 
 4. **Ask.** The assistant, with suggested questions in both languages. See "The AI assistant" below.
 5. **Action plan.** Actions by date: before 20 October, on the day, by 27 October. Each action opens to show **why** (the scoring engine's facts for that ghat), a **suggested role** and **what to verify**. Standard CPCB site measures sit in each column, labelled as general guidance. Ticks are notes on that device only; they do not verify work and are not shared. Copy, WhatsApp (the officer sends it) and print.
 6. **Brief.** One A4 page in Hindi or English: top 3 ghats with their numbers and report pages, data gaps, an honesty box, a line saying proposed actions need the officer's review, and sources.
-7. **Data & method.** Provenance, period and phases, how missing and BDL are handled, assumed units, the scoring method and tiers, ranking sensitivity, how the AI gets its evidence, what the app cannot conclude, data points to verify (reporting-limit values, identity uncertainty, missing tables), how to update after a festival, what works offline, and what is needed before government use.
-8. **How to use.** Steps, controls, badges, glossary, questions officers ask, accessibility.
+7. **Add data.** Upload a CSV of new readings (template included) to check it and preview how the ranking would change. Every row is validated with its row number; BDL and not sampled are kept as such, never 0; readings already in the data are kept or replaced as you choose. The preview shows each ghat's rank, score and tier now and with your file, its data coverage and a "Limited data" badge, and you can download the checked rows to append to the data file. The file is read in your browser only: not sent anywhere, not saved, not given to the AI. It is a preview, not the official ranking, and it does not update rank ranges, the brief or the action plan.
+8. **Data & method.** Provenance, period and phases, how missing and BDL are handled, assumed units, the scoring method and tiers, ranking sensitivity, how the AI gets its evidence, what the app cannot conclude, data points to verify (reporting-limit values, identity uncertainty, missing tables), how to update after a festival, what works offline, and what is needed before government use.
+9. **How to use.** Steps, controls, badges, glossary, questions officers ask, accessibility.
 
 Every screen shows **"Historical data: MPPCB tests 2023 to 2025, not live"** and the AI status, and has the All festivals / Durga only switch, हिन्दी / English and **A− A A+**. On a phone the main screens move to a bottom tab bar. `?lang=hi` opens in Hindi; `?scope=durga` opens the Durga-only view.
 
@@ -57,7 +58,7 @@ flowchart LR
 ```
 
 - **Unchanged:** the Python pipeline, `rules.yaml`, the CSV, the scoring engine and its 55 original tests. Scores and ranks are identical (Bairagarh 81.9 … Prempura 21.1).
-- **Added:** `docs/assist-core.js` (shared by browser and server), `docs/analytics.js`, `docs/assistant.js`, `api/gemini.js` (one Vercel Node.js function, no dependencies), `tools/serve.js` (local dev server), `tests/js/` and `tests/test_ai.py`. The build now also exports the full readings table (all 13 parameters with valid / BDL / missing status) and dataset facts.
+- **Added:** `docs/assist-core.js` (shared by browser and server), `docs/analytics.js`, `docs/assistant.js`, `docs/upload-core.js` and `docs/upload.js` (the upload check and ranking preview, a tested port of the scoring engine), `api/gemini.js` (one Vercel Node.js function, no dependencies), `tools/serve.js` (local dev server), `tests/js/` and `tests/test_ai.py`. The build now also exports the full readings table (all 13 parameters with valid / BDL / missing status) and dataset facts.
 - **Why a server function:** the Gemini key must never reach the browser. A single function is the smallest safe change; the static site is untouched and still runs alone.
 
 ## The AI assistant
@@ -129,14 +130,15 @@ Bairagarh is first under every weight set we tried, and Prempura is last under e
 - Both briefs print on exactly one A4 page in both languages; the action plan prints as a checklist.
 - Every reading shown carries year, festival, phase, report file and page, with a link to `report.pdf#page=N`.
 - Missing data appears as "not sampled" or "no table in report" (hatched), never as clean. BDL is shown as BDL, never as 0.
-- 66 Python tests plus 21 mocked AI tests (`tests/`), including: 42 of 116 DO readings below 5, 100 of 112 BOD readings above 3, the four zero DO readings all at Bairagarh, the prototype ranking, edge cases of the limits, weight changes with no code change, missing phases excluded and reported, banned words, same numbers in Hindi and English, one A4 page, no network calls in the UI, a Hindi string for every English one, every action placed in exactly one plan date, fonts shipped as local files, the readings table matching the CSV, no API key in any committable file, `.env` files ignored, the browser calling only the relative `api/gemini`, and the AI endpoint's behaviour with a missing key, valid and malformed replies, fabricated sources, invented numbers, URLs, health claims, prompt injection, timeouts, rate limits, quota, transient failures and bad configuration.
+- 69 Python tests, including 30 JavaScript tests (`tests/`): 42 of 116 DO readings below 5, 100 of 112 BOD readings above 3, the four zero DO readings all at Bairagarh, the prototype ranking, edge cases of the limits, weight changes with no code change, missing phases excluded and reported, banned words, same numbers in Hindi and English, one A4 page, no network calls in the UI, a Hindi string for every English one, every action placed in exactly one plan date, fonts shipped as local files, the readings table matching the CSV, no API key in any committable file, `.env` files ignored, the browser calling only the relative `api/gemini`, and the upload preview reproducing the official scores exactly and rejecting every kind of bad row, the AI endpoint's behaviour with a missing key, valid and malformed replies, fabricated sources, invented numbers, URLs, health claims, prompt injection, timeouts, rate limits, quota, transient failures and bad configuration.
 - [docs/VERIFICATION.md](docs/VERIFICATION.md): 20 app numbers for a teammate to check against the PDF pages.
 
 ## What does not work yet, and what the data can't say
 
 - **AI answers can still be wrong.** The checks catch invented sources, unknown numbers, links and health wording, not every mistake. Answers say which statements are not matched to the evidence.
 - **AI is not live on Vercel until `GEMINI_API_KEY` is set there**, and the public endpoint's rate limits are per instance only (see above).
-- New Hindi text (analytics, assistant, Data & method, action details) is marked `REVIEW: Hindi reviewer` like the rest. Gemini's Hindi answers are not reviewed by a person.
+- **Upload is a preview only.** It cannot publish data: new readings become official only after someone checks them against the report pages, appends them to the CSV and rebuilds. The preview's coverage and ranks change when a new year is added.
+- New Hindi text (analytics, assistant, Add data, Data & method, action details) is marked `REVIEW: Hindi reviewer` like the rest. Gemini's Hindi answers are not reviewed by a person.
 
 - **Hindi text needs a native reader's approval.** Every Hindi string is marked `REVIEW: Hindi reviewer` in `i18n/` and `ghats.yaml`.
 - **VERIFICATION.md is not yet filled in.** The "checked against PDF by" column is empty.

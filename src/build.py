@@ -47,6 +47,8 @@ def build(rules=None, ghats=None, date=None):
         "event": rules["event"],
         "plan": plan_groups(rules),
         "limits": {k: rules["limits"][k] for k in ("class", "do_min", "bod_max", "ph_min", "ph_max")},
+        "rules": {k: rules[k] for k in ("weights", "tiers", "confidence")}
+                 | {"flags": {"missing": rules["data"]["missing_flags"], "bdl": rules["data"]["bdl_flags"]}},
         "no_limit_parameters": rules["limits"]["no_limit_parameters"],
         "component_max": component_max(rules),
         **readings_table(df, ghats),
