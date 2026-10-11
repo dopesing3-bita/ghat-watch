@@ -38,8 +38,8 @@ ui:
   col_later: बाद में   # REVIEW: Hindi reviewer
   col_change: अंतर   # REVIEW: Hindi reviewer
   col_worse: बिगड़ा?   # REVIEW: Hindi reviewer
-  yes: "हां"   # REVIEW: Hindi reviewer
-  no: "नहीं"   # REVIEW: Hindi reviewer
+  ans_yes: "हां"   # REVIEW: Hindi reviewer
+  ans_no: "नहीं"   # REVIEW: Hindi reviewer
   unit_assumed: "इकाई मानी गई: {unit}"   # REVIEW: Hindi reviewer
   report_page: "रिपोर्ट पृ. {page}"   # REVIEW: Hindi reviewer
   focus: सुझाया गया ध्यान (निर्णय अधिकारी का)   # REVIEW: Hindi reviewer

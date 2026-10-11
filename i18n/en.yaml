@@ -37,8 +37,8 @@ ui:
   col_later: Later
   col_change: Change
   col_worse: Worse?
-  yes: "Yes"
-  no: "No"
+  ans_yes: "Yes"
+  ans_no: "No"
   unit_assumed: "unit assumed: {unit}"
   report_page: "Report p.{page}"
   focus: Suggested focus (the officer decides)

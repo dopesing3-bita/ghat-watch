@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghat Watch: Bhopal visarjan ghats</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <a href="#/" class="title" id="t-title">Ghat Watch</a>
+    <span class="subtitle" id="t-subtitle"></span>
+  </div>
+  <nav class="controls" aria-label="Controls">
+    <a href="#/" class="navlink" id="nav-ranking"></a>
+    <a href="#/brief" class="navlink" id="nav-brief"></a>
+    <span class="seg" role="group" aria-label="Scope">
+      <button type="button" data-scope="all" id="scope-all"></button>
+      <button type="button" data-scope="durga" id="scope-durga"></button>
+    </span>
+    <button type="button" id="lang-toggle" class="lang"></button>
+  </nav>
+</header>
+<section class="notice" aria-live="polite">
+  <p id="headline"></p>
+  <p id="coliform" class="coliform"></p>
+</section>
+<main id="app"></main>
+<footer class="foot" id="footer"></footer>
+<noscript>This page needs JavaScript turned on. It makes no network calls.</noscript>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
