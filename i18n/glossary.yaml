@@ -1,0 +1,38 @@
+# BR-71 glossary. Every Hindi string needs approval.  REVIEW: Hindi reviewer
+parameter:
+  Dissolved oxygen: {en: Dissolved oxygen (DO), hi: घुलित ऑक्सीजन (DO)}   # REVIEW: Hindi reviewer
+  BOD: {en: BOD, hi: बीओडी (BOD)}   # REVIEW: Hindi reviewer
+  pH: {en: pH, hi: पीएच (pH)}   # REVIEW: Hindi reviewer
+  COD: {en: COD, hi: सीओडी (COD)}   # REVIEW: Hindi reviewer
+  Total solids: {en: Total solids, hi: कुल ठोस}   # REVIEW: Hindi reviewer
+  Dissolved solids: {en: Dissolved solids, hi: घुलित ठोस}   # REVIEW: Hindi reviewer
+  Suspended solids: {en: Suspended solids, hi: निलंबित ठोस}   # REVIEW: Hindi reviewer
+  Turbidity: {en: Turbidity, hi: गंदलापन (टर्बिडिटी)}   # REVIEW: Hindi reviewer
+  Conductivity: {en: Conductivity, hi: चालकता}   # REVIEW: Hindi reviewer
+  Chromium: {en: Chromium, hi: क्रोमियम}   # REVIEW: Hindi reviewer
+  Lead: {en: Lead, hi: सीसा (लेड)}   # REVIEW: Hindi reviewer
+  Zinc: {en: Zinc, hi: जस्ता (ज़िंक)}   # REVIEW: Hindi reviewer
+  Copper: {en: Copper, hi: तांबा (कॉपर)}   # REVIEW: Hindi reviewer
+phase:
+  pre: {en: Before immersion, hi: विसर्जन से पहले}   # REVIEW: Hindi reviewer
+  during: {en: During immersion, hi: विसर्जन के दौरान}   # REVIEW: Hindi reviewer
+  after: {en: One week after, hi: एक सप्ताह बाद}   # REVIEW: Hindi reviewer
+festival:
+  Ganesh: {en: Ganesh, hi: गणेश}   # REVIEW: Hindi reviewer
+  Durga: {en: Durga, hi: दुर्गा}   # REVIEW: Hindi reviewer
+tier:
+  1: {en: Priority 1, hi: प्राथमिकता 1}   # REVIEW: Hindi reviewer
+  2: {en: Priority 2, hi: प्राथमिकता 2}   # REVIEW: Hindi reviewer
+  3: {en: Priority 3, hi: प्राथमिकता 3}   # REVIEW: Hindi reviewer
+verdict:
+  pass: {en: Within limit, hi: सीमा के भीतर}   # REVIEW: Hindi reviewer
+  fail: {en: Outside limit, hi: सीमा से बाहर}   # REVIEW: Hindi reviewer
+  bdl: {en: BDL (below detection limit), hi: BDL (पहचान सीमा से नीचे)}   # REVIEW: Hindi reviewer
+  not_sampled: {en: Not sampled, hi: नमूना नहीं लिया गया}   # REVIEW: Hindi reviewer
+  no_limit: {en: No class B limit, hi: क्लास B सीमा तय नहीं}   # REVIEW: Hindi reviewer
+component:
+  oxygen: {en: Oxygen stress, hi: ऑक्सीजन की कमी}   # REVIEW: Hindi reviewer
+  organic: {en: Organic load, hi: जैविक प्रदूषण भार}   # REVIEW: Hindi reviewer
+  ph: {en: pH, hi: पीएच (pH)}   # REVIEW: Hindi reviewer
+  impact: {en: Immersion impact, hi: विसर्जन का असर}   # REVIEW: Hindi reviewer
+  recovery: {en: Recovery after one week, hi: एक सप्ताह बाद सुधार}   # REVIEW: Hindi reviewer

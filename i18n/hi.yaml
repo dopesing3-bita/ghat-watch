@@ -1,0 +1,104 @@
+# BR-71 Hindi templates. Same keys and same numbers as en.yaml.
+# Every line below needs approval by a Hindi-reading teammate.  REVIEW: Hindi reviewer
+ui:
+  title: घाट वॉच   # REVIEW: Hindi reviewer
+  subtitle: भोपाल के विसर्जन घाट, दर्ज जल-गुणवत्ता जोखिम के क्रम में, MPPCB रिपोर्ट 2023 से 2025   # REVIEW: Hindi reviewer
+  headline: "BOD {bod_valid} में से {bod_above} रीडिंग में CPCB क्लास B सीमा {bod_max} mg/l से अधिक था, और DO {do_valid} में से {do_below} रीडिंग में {do_min} mg/l से कम था। यह क्रम तुलनात्मक है: किसी भी घाट को सीमा के भीतर नहीं दिखाया गया है।"   # REVIEW: Hindi reviewer
+  coliform: "टोटल कोलीफॉर्म (क्लास B का एक मानक) इन रिपोर्टों में शामिल नहीं है।"   # REVIEW: Hindi reviewer
+  scope_all: सभी त्योहार 2023 से 2025   # REVIEW: Hindi reviewer
+  scope_durga: केवल दुर्गा   # REVIEW: Hindi reviewer
+  nav_ranking: क्रम सूची   # REVIEW: Hindi reviewer
+  nav_brief: संक्षिप्त नोट   # REVIEW: Hindi reviewer
+  back: क्रम सूची पर लौटें   # REVIEW: Hindi reviewer
+  score: अंक   # REVIEW: Hindi reviewer
+  of_100: / 100   # REVIEW: Hindi reviewer
+  confidence: डेटा उपलब्धता   # REVIEW: Hindi reviewer
+  rank_range: "1000 भार-सेट में क्रम: {min} से {max}"   # REVIEW: Hindi reviewer
+  rank_fixed: "सभी 1000 भार-सेट में क्रम {min}"   # REVIEW: Hindi reviewer
+  top_stable: "आजमाए गए 1000 भार-सेट में से किसी में भी क्रम 1 नहीं बदलता।"   # REVIEW: Hindi reviewer
+  top_unstable: "क्रम 1 स्थिर नहीं है: आजमाए गए 1000 भार-सेट में से कुछ में यह बदल जाता है।"   # REVIEW: Hindi reviewer
+  no_history: कोई पुराना डेटा नहीं   # REVIEW: Hindi reviewer
+  open_detail: प्रमाण देखें   # REVIEW: Hindi reviewer
+  components: अंकों के घटक   # REVIEW: Hindi reviewer
+  readings: इस घटक के पीछे की रीडिंग   # REVIEW: Hindi reviewer
+  coverage: "DO और BOD की उपलब्धता (धारीदार = नमूना नहीं या तालिका नहीं)"   # REVIEW: Hindi reviewer
+  metals: धातुएं (क्लास B सीमा नहीं, कोई अंक नहीं)   # REVIEW: Hindi reviewer
+  metals_note: "उछाल केवल रीडिंग का पैटर्न है। इसका कारण डेटा से स्थापित नहीं होता।"   # REVIEW: Hindi reviewer
+  not_testable: "जांच संभव नहीं (कोई मान उपलब्ध नहीं)"   # REVIEW: Hindi reviewer
+  pairs: पहले बनाम बाद के चरण की जोड़ियां   # REVIEW: Hindi reviewer
+  col_year: वर्ष   # REVIEW: Hindi reviewer
+  col_festival: त्योहार   # REVIEW: Hindi reviewer
+  col_phase: चरण   # REVIEW: Hindi reviewer
+  col_parameter: मानक   # REVIEW: Hindi reviewer
+  col_value: मान   # REVIEW: Hindi reviewer
+  col_limit: क्लास B सीमा   # REVIEW: Hindi reviewer
+  col_result: परिणाम   # REVIEW: Hindi reviewer
+  col_source: स्रोत   # REVIEW: Hindi reviewer
+  col_pre: पहले   # REVIEW: Hindi reviewer
+  col_later: बाद में   # REVIEW: Hindi reviewer
+  col_change: अंतर   # REVIEW: Hindi reviewer
+  col_worse: बिगड़ा?   # REVIEW: Hindi reviewer
+  yes: "हां"   # REVIEW: Hindi reviewer
+  no: "नहीं"   # REVIEW: Hindi reviewer
+  unit_assumed: "इकाई मानी गई: {unit}"   # REVIEW: Hindi reviewer
+  report_page: "रिपोर्ट पृ. {page}"   # REVIEW: Hindi reviewer
+  focus: सुझाया गया ध्यान (निर्णय अधिकारी का)   # REVIEW: Hindi reviewer
+  designated: "2026 के लिए निर्धारित: {value}"   # REVIEW: Hindi reviewer
+  designated_yes: "हां (समाचार रिपोर्ट, BMC से पुष्टि करें)"   # REVIEW: Hindi reviewer
+  designated_unknown: "पता नहीं, BMC से पुष्टि करें"   # REVIEW: Hindi reviewer
+  copy: टेक्स्ट कॉपी करें   # REVIEW: Hindi reviewer
+  copied: कॉपी हो गया   # REVIEW: Hindi reviewer
+  whatsapp: WhatsApp पर भेजें   # REVIEW: Hindi reviewer
+  print: प्रिंट करें या PDF सहेजें   # REVIEW: Hindi reviewer
+  lang: English
+  reporting_limit: "संभवतः रिपोर्टिंग-सीमा मान"   # REVIEW: Hindi reviewer
+  no_table: रिपोर्ट में तालिका नहीं   # REVIEW: Hindi reviewer
+  scope_shift: "दूसरे दृश्य ({other}) में क्रम {n} स्थान बदलता है।"   # REVIEW: Hindi reviewer
+  footer: "कोई भाषा मॉडल नहीं, कोई नेटवर्क कॉल नहीं। हर संख्या MPPCB रिपोर्ट के पृष्ठ से जुड़ी है। भार rules.yaml में प्रस्तावित हैं।"   # REVIEW: Hindi reviewer
+flag:
+  identity_uncertain: पहचान अनिश्चित, दो अलग जगह हो सकती हैं   # REVIEW: Hindi reviewer
+  limited_data: सीमित डेटा   # REVIEW: Hindi reviewer
+  metals_spike: धातुओं में उछाल   # REVIEW: Hindi reviewer
+  reporting_limit: संभवतः रिपोर्टिंग-सीमा मान   # REVIEW: Hindi reviewer
+  scope_shift: केवल-दुर्गा दृश्य में क्रम अलग   # REVIEW: Hindi reviewer
+  no_history: कोई पुराना डेटा नहीं   # REVIEW: Hindi reviewer
+reason:
+  oxygen: "DO {valid} में से {below} रीडिंग में {do_min} mg/l से कम"   # REVIEW: Hindi reviewer
+  oxygen_zero: "DO {zeros} बार 0 mg/l दर्ज"   # REVIEW: Hindi reviewer
+  organic: "BOD {valid} में से {above} रीडिंग में {bod_max} mg/l से अधिक"   # REVIEW: Hindi reviewer
+  organic_high: "विसर्जन के दौरान BOD {max_during} mg/l तक पहुंचा"   # REVIEW: Hindi reviewer
+  ph: "pH {valid} में से {outside} रीडिंग में 6.5 से 8.5 के बाहर"   # REVIEW: Hindi reviewer
+  impact: "जांच योग्य {tested} में से {worse} जोड़ियों में विसर्जन के दौरान पानी पहले से खराब"   # REVIEW: Hindi reviewer
+  recovery: "जांच योग्य {tested} में से {worse} जोड़ियों में एक सप्ताह बाद भी पानी पहले से खराब"   # REVIEW: Hindi reviewer
+  no_history: "2023 से 2025 की रिपोर्टों में कोई रीडिंग नहीं"   # REVIEW: Hindi reviewer
+  joiner: "; "
+focus:
+  do_check: विसर्जन से पहले DO जांच और एरेशन की योजना   # REVIEW: Hindi reviewer
+  cleaning: अतिरिक्त सफाई   # REVIEW: Hindi reviewer
+  test_during: केवल पहले नहीं, विसर्जन के दौरान भी जांच   # REVIEW: Hindi reviewer
+  retest_after: एक सप्ताह बाद दोबारा जांच   # REVIEW: Hindi reviewer
+  metals: जांच में धातुएं शामिल करें   # REVIEW: Hindi reviewer
+  fill_gap: छूटे हुए नमूने भरें   # REVIEW: Hindi reviewer
+  baseline_test: 20 अक्टूबर से पहले आधार जांच   # REVIEW: Hindi reviewer
+brief:
+  title: "घाट वॉच संक्षिप्त नोट: दुर्गा विसर्जन, 20 अक्टूबर 2026"   # REVIEW: Hindi reviewer
+  prepared: "{date} को MPPCB की मूर्ति-विसर्जन रिपोर्ट 2023, 2024 और 2025 से तैयार। दृश्य: {scope}।"   # REVIEW: Hindi reviewer
+  top: "दर्ज जोखिम के अनुसार शीर्ष 3 घाट"   # REVIEW: Hindi reviewer
+  ghat_line: "{rank}. {name}: अंक {total} / 100, {tier}।"   # REVIEW: Hindi reviewer
+  numbers: "रीडिंग: {reason}।"   # REVIEW: Hindi reviewer
+  stability: "{stability}"
+  focus_line: "सुझाया गया ध्यान: {focus}।"   # REVIEW: Hindi reviewer
+  pages: "रिपोर्ट पृष्ठ: {pages}।"   # REVIEW: Hindi reviewer
+  gaps: डेटा की कमियां   # REVIEW: Hindi reviewer
+  gap_no_history: "{name}: किसी रिपोर्ट में कोई रीडिंग नहीं। 20 अक्टूबर से पहले आधार जांच।"   # REVIEW: Hindi reviewer
+  gap_no_table: "{names}: रिपोर्ट में {festival} {year} की तालिका नहीं।"   # REVIEW: Hindi reviewer
+  gap_cells: "{count} अन्य DO या BOD रीडिंग 'नमूना नहीं लिया गया' दर्ज हैं।"   # REVIEW: Hindi reviewer
+  gap_coliform: "टोटल कोलीफॉर्म इन रिपोर्टों में शामिल नहीं है।"   # REVIEW: Hindi reviewer
+  honesty: यह नोट क्या नहीं कहता   # REVIEW: Hindi reviewer
+  honesty_units: "इकाइयां मानी गई हैं। रिपोर्टों में इकाइयां छपी नहीं हैं।"   # REVIEW: Hindi reviewer
+  honesty_relative: "यह क्रम तुलनात्मक है। BOD {bod_valid} में से {bod_above} रीडिंग में सीमा से अधिक था, इसलिए किसी घाट को सीमा के भीतर नहीं दिखाया गया।"   # REVIEW: Hindi reviewer
+  honesty_coliform: "टोटल कोलीफॉर्म डेटा में नहीं है।"   # REVIEW: Hindi reviewer
+  honesty_metals: "धातुओं के लिए क्लास B सीमा नहीं है और उनसे कोई अंक नहीं मिलता।"   # REVIEW: Hindi reviewer
+  honesty_health: "यह केवल रीडिंग की CPCB क्लास B सीमा से तुलना है। इसमें स्वास्थ्य के बारे में कोई दावा नहीं है।"   # REVIEW: Hindi reviewer
+  sources: स्रोत   # REVIEW: Hindi reviewer
+  sep: "; "

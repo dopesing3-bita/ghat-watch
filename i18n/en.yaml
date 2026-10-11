@@ -1,0 +1,103 @@
+# BR-71 English templates. Numbers are filled in by src/brief.py and src/i18n.py.
+ui:
+  title: Ghat Watch
+  subtitle: Bhopal immersion ghats ranked by recorded water-quality risk, MPPCB reports 2023 to 2025
+  headline: "BOD was above the CPCB class B limit of {bod_max} mg/l in {bod_above} of {bod_valid} readings, and DO was below {do_min} mg/l in {do_below} of {do_valid}. The ranking is relative: no ghat is shown as meeting the limit."
+  coliform: "Total coliform (a class B parameter) is not covered by these reports."
+  scope_all: All festivals 2023 to 2025
+  scope_durga: Durga only
+  nav_ranking: Ranking
+  nav_brief: Brief
+  back: Back to ranking
+  score: Score
+  of_100: of 100
+  confidence: Data coverage
+  rank_range: "Rank range under 1000 weight sets: {min} to {max}"
+  rank_fixed: "Rank {min} in all 1000 weight sets"
+  top_stable: "Rank 1 does not change under any of the 1000 weight sets tried."
+  top_unstable: "Rank 1 is not stable: it changes under some of the 1000 weight sets tried."
+  no_history: No history
+  open_detail: Open evidence
+  components: Score components
+  readings: Readings behind this component
+  coverage: "DO and BOD coverage (hatched = not sampled or no table)"
+  metals: Metals (no class B limit, no points)
+  metals_note: "A spike is a pattern in the readings. The cause is not established by the data."
+  not_testable: "Not testable (a value is missing)"
+  pairs: Pre versus later phase pairs
+  col_year: Year
+  col_festival: Festival
+  col_phase: Phase
+  col_parameter: Parameter
+  col_value: Value
+  col_limit: Class B limit
+  col_result: Result
+  col_source: Source
+  col_pre: Pre
+  col_later: Later
+  col_change: Change
+  col_worse: Worse?
+  yes: "Yes"
+  no: "No"
+  unit_assumed: "unit assumed: {unit}"
+  report_page: "Report p.{page}"
+  focus: Suggested focus (the officer decides)
+  designated: "Designated for 2026: {value}"
+  designated_yes: "yes (news report, confirm with BMC)"
+  designated_unknown: "unknown, confirm with BMC"
+  copy: Copy text
+  copied: Copied
+  whatsapp: Share on WhatsApp
+  print: Print or save as PDF
+  lang: हिन्दी
+  reporting_limit: "possible reporting-limit value"
+  no_table: no table in report
+  scope_shift: "Rank moves by {n} places in the other view ({other})."
+  footer: "No language model, no network calls. Every number links to the MPPCB report page. Weights are proposals in rules.yaml."
+flag:
+  identity_uncertain: Identity uncertain, may be two places
+  limited_data: Limited data
+  metals_spike: Metals spike
+  reporting_limit: Possible reporting-limit value
+  scope_shift: Rank differs in Durga-only view
+  no_history: No history
+reason:
+  oxygen: "DO below {do_min} mg/l in {below} of {valid} readings"
+  oxygen_zero: "DO read 0 mg/l {zeros} times"
+  organic: "BOD above {bod_max} mg/l in {above} of {valid} readings"
+  organic_high: "BOD reached {max_during} mg/l during immersion"
+  ph: "pH outside 6.5 to 8.5 in {outside} of {valid} readings"
+  impact: "water worse during immersion than before in {worse} of {tested} testable pairs"
+  recovery: "water still worse one week after in {worse} of {tested} testable pairs"
+  no_history: "No readings in the 2023 to 2025 reports"
+  joiner: "; "
+focus:
+  do_check: DO check before immersion and aeration planning
+  cleaning: Extra cleaning
+  test_during: Test during immersion, not only before
+  retest_after: Re-test one week after
+  metals: Include metals in testing
+  fill_gap: Fill the sampling gap
+  baseline_test: Baseline test before 20 October
+brief:
+  title: "Ghat Watch brief: Durga visarjan, 20 October 2026"
+  prepared: "Prepared {date} from MPPCB idol-immersion reports 2023, 2024 and 2025. View: {scope}."
+  top: "Top 3 ghats by recorded risk"
+  ghat_line: "{rank}. {name}: score {total} of 100, {tier}."
+  numbers: "Readings: {reason}."
+  stability: "{stability}"
+  focus_line: "Suggested focus: {focus}."
+  pages: "Report pages: {pages}."
+  gaps: Data gaps
+  gap_no_history: "{name}: no readings in any report. Baseline test before 20 October."
+  gap_no_table: "{names}: no {festival} {year} table in the report."
+  gap_cells: "{count} other DO or BOD readings are marked not sampled."
+  gap_coliform: "Total coliform is not covered by these reports."
+  honesty: What this does not say
+  honesty_units: "Units are assumed. The reports print none."
+  honesty_relative: "The ranking is relative. BOD was above the limit in {bod_above} of {bod_valid} readings, so no ghat is shown as meeting the limit."
+  honesty_coliform: "Total coliform is not in the data."
+  honesty_metals: "Metals have no class B limit and give no points."
+  honesty_health: "This compares readings with CPCB class B limits. It makes no health claim."
+  sources: Sources
+  sep: "; "

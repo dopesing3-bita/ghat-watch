@@ -32,7 +32,7 @@ Weights and thresholds are proposed policy choices, not science. They live in `r
 | BR-23 | Immersion impact, up to 20 | 20 × share of (year, festival, parameter) pairs where during is worse than pre by at least 1 mg/l (DO fell or BOD rose). Only pairs with both values count. Others are reported as "not testable". |
 | BR-24 | Recovery, up to 10 | 10 × share of pairs where after one week is worse than pre by more than 0.5 mg/l. Same exclusion rule. |
 | BR-25 | Metals: no points | Flag a spike when during is at least 5 times pre and both are numeric, or when a metal goes from BDL to detected. State that the cause is not established by the data. |
-| BR-26 | Reporting-limit values | If a metal has the same value in every phase and ghat of a year, flag "possible reporting-limit value" and exclude it from spike logic. Observed in 2025 chromium (0.03) and lead (0.031). |
+| BR-26 | Reporting-limit values | If a metal has the same value in every phase and ghat of a year and festival (each festival is a separate set of tables), flag "possible reporting-limit value" and exclude it from spike logic. Observed in 2025 chromium (0.03, both festivals) and 2025 Ganesh lead (0.031, 17 readings). 2025 Durga lead varies, so it stays in spike logic. |
 
 ## Ranking, tiers and confidence
 
