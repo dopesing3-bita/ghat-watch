@@ -1,0 +1,69 @@
+# Ghat Watch rules. Every limit, weight and cut-off lives here, never in code.
+# Weights and tiers are PROPOSED policy choices for BMC / MPPCB to review.
+
+data:
+  file: data/bhopal_ghats_2023_2025.csv     # BR-06: Bhopal file only
+  missing_flags: ["not sampled", "*", "**", ""]   # BR-01
+  bdl_flags: ["BDL", "ND"]                       # BR-02
+
+limits:                     # BR-10, CPCB class B (organised outdoor bathing)
+  class: B
+  do_min: 5.0               # fail if DO < 5 (5 passes)
+  bod_max: 3.0              # fail if BOD > 3 (3 passes)
+  ph_min: 6.5
+  ph_max: 8.5
+  no_limit_parameters:      # BR-11: reported, never called a violation
+    [COD, Total solids, Dissolved solids, Suspended solids, Turbidity, Conductivity,
+     Chromium, Lead, Zinc, Copper]
+
+weights:
+  oxygen:                   # BR-20, max 40
+    share_below_min: 20
+    any_below: 10
+    any_below_value: 2.0
+    any_zero: 10
+  organic:                  # BR-21, max 25
+    share_above_max: 15
+    during_high: 10
+    during_high_value: 9.0  # three times the limit
+  ph:                       # BR-22, max 5
+    share_outside: 5
+  impact:                   # BR-23, max 20
+    share_worse: 20
+    min_change: 1.0         # during worse than pre by at least this (mg/l)
+  recovery:                 # BR-24, max 10
+    share_worse: 10
+    min_change: 0.5         # after worse than pre by more than this (mg/l)
+
+metals:                     # BR-25 / BR-26
+  parameters: [Chromium, Lead, Zinc, Copper]
+  spike_ratio: 5.0
+  reporting_limit_min_readings: 5   # same value at least this many times, and no other number
+
+tiers:                      # BR-30, no green tier
+  priority_1: 60
+  priority_2: 35
+
+confidence:                 # BR-32
+  limited_below: 0.80
+  years: [2023, 2024, 2025]
+  festivals: [Ganesh, Durga]
+  phases: [pre, during, after]
+
+stability:                  # BR-33
+  runs: 1000
+  seed: 20261020
+  spread: 0.5               # each component weight scaled by 1 +/- 0.5
+
+scope:                      # BR-40
+  default: all              # all | durga
+  rank_shift_flag: 2
+
+focus:                      # BR-60 thresholds on component points
+  oxygen: 20
+  organic: 15
+  impact: 10
+  recovery: 5
+
+summary:                    # BR-31 headline, computed from data, shown on every screen
+  headline_parameter: BOD

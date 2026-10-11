@@ -1,0 +1,60 @@
+# BR-50 ghat register. The officer can edit this file and rebuild.
+# designated_2026: yes | unknown. Source: Free Press Journal reports (see README). Confirm with BMC.
+# name_hi lines need approval.  REVIEW: Hindi reviewer
+ghats:
+  - id: bairagarh
+    site: Bairagarh (Sant Hirdaram) kund
+    name_hi: बैरागढ़ (संत हिरदाराम) कुंड   # REVIEW: Hindi reviewer
+    water_body: Upper Lake
+    in_data: true
+    designated_2026: "yes"
+    source: Free Press Journal
+  - id: khatlapura
+    site: Khatlapura ghat
+    name_hi: खटलापुरा घाट   # REVIEW: Hindi reviewer
+    water_body: Lower Lake
+    in_data: true
+    designated_2026: "yes"
+    source: Free Press Journal
+  - id: prempura
+    site: Prempura ghat
+    name_hi: प्रेमपुरा घाट   # REVIEW: Hindi reviewer
+    water_body: Upper Lake
+    in_data: true
+    designated_2026: "yes"
+    source: Free Press Journal
+  - id: rani-kamlapati
+    site: Rani Kamlapati ghat / Kamla Park kund
+    name_hi: रानी कमलापति घाट / कमला पार्क कुंड   # REVIEW: Hindi reviewer
+    water_body: Lower Lake
+    in_data: true
+    designated_2026: unknown
+    source: not on the news list, confirm with BMC
+  - id: hathaikheda
+    site: Hathaikheda dam / kund
+    name_hi: हथाईखेड़ा डैम / कुंड   # REVIEW: Hindi reviewer
+    water_body: Hathaikheda dam
+    in_data: true
+    designated_2026: "yes"
+    source: Free Press Journal
+  - id: malikhedi
+    site: Malikhedi kund
+    name_hi: मालीखेड़ी कुंड   # REVIEW: Hindi reviewer
+    water_body: Kund
+    in_data: true
+    designated_2026: "yes"
+    source: Free Press Journal
+  - id: shahpura
+    site: Shahpura lake ghat
+    name_hi: शाहपुरा झील घाट   # REVIEW: Hindi reviewer
+    water_body: Shahpura Lake
+    in_data: true
+    designated_2026: unknown
+    source: not on the news list, confirm with BMC
+  - id: arch-bridge
+    site: Arch Bridge
+    name_hi: आर्च ब्रिज   # REVIEW: Hindi reviewer
+    water_body: not in the reports
+    in_data: false
+    designated_2026: "yes"
+    source: Free Press Journal
