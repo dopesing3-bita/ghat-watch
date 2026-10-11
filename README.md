@@ -2,6 +2,7 @@
 
 **Team:** _TODO team name_ · **Members:** _TODO name (role), name (role), name (role), name (role)_
 **Track:** Track 2, Visarjan Ghat Watch · Claude Impact Lab Bhopal, 11 October 2026
+**Live:** [ghat-watch-six.vercel.app](https://ghat-watch-six.vercel.app) · mirror on [GitHub Pages](https://dopesing3-bita.github.io/ghat-watch/) · Hindi: [ghat-watch-six.vercel.app/?lang=hi](https://ghat-watch-six.vercel.app/?lang=hi)
 **Built for:** the Bhopal Municipal Corporation officer who plans Durga visarjan on **20 October 2026** and decides where to send extra cleaning, aeration and water testing.
 
 Ghat Watch ranks Bhopal's immersion ghats by the water-quality risk recorded in three years of MPPCB reports (2023 to 2025, Ganesh and Durga). It shows the plain-words reason for each rank and every reading behind it, each linked to its report page. It turns the ranking into a dated action plan the officer's teams can tick off, and produces a one-page brief in Hindi and English that the officer can forward.
