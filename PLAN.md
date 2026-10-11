@@ -22,6 +22,9 @@ CSV → load (status) → engine per scope (all, durga) → stability → brief 
 3. Action plan (BR-61, BR-64): actions by date, tickable on the device, copy/WhatsApp/print.
 4. Brief: one A4 page, copy, WhatsApp link, print.
 5. How to use (BR-63): steps, controls, scoring, badges, glossary, FAQ, accessibility, upkeep.
+6. Analytics (BR-65, BR-82): filters, sortable table, readings matrix, before vs during, small multiples, coverage, factors, comparison.
+7. Ask (BR-80 to BR-87): no-AI answers first; Gemini via api/gemini with an evidence pack and checked replies.
+8. Data & method: provenance, handling of missing and BDL, method, sensitivity, AI evidence, limits, data points to verify.
 
 ## Tests by BR id
 BR-01/02 status and counts. BR-10 limits at the edges. BR-20..24 Bairagarh ≈ 81.9, Prempura ≈ 21.1 last. BR-23 exclusion reported. BR-26 2025 Cr/Pb flagged. BR-30 tiers. BR-32 confidence and No history. BR-33 deterministic seed. BR-40 Durga scope. BR-13 banned words. BR-70..72 one page, same numbers EN and HI, numbers traceable to evidence.

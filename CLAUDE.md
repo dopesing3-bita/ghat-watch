@@ -6,7 +6,9 @@ Outcome: ghats ranked by risk, each with a plain-words reason and traceable numb
 Source of truth for logic: docs/BUSINESS_RULES.md (BR ids). Thresholds and weights live in rules.yaml, never in code.
 
 Hard constraints:
-- No language model and no network call at runtime. No API keys. No paid service.
+- The static app (docs/) makes no network call and needs no key: everything except AI explanations works from disk and offline.
+- AI is optional and server-side only: api/gemini.js reads GEMINI_API_KEY from the environment. Never put a key in docs/, tests, logs or git. The browser may call only the relative api/gemini, only when the user asks.
+- The AI never sets or changes a score, tier or rank; it explains the evidence pack (docs/assist-core.js) and its reply is checked (BR-80 to BR-87). Health and current-condition questions never go to the AI.
 - Use only data in data/. Never scrape or log in to government portals.
 - Missing is never clean. BDL is never zero. Never claim health effects.
 - Python 3.11 with pandas, PyYAML and pytest for the pipeline. Plain HTML, CSS and JS for the UI. The UI must work by opening docs/index.html from disk.
@@ -14,4 +16,4 @@ Hard constraints:
 - Every UI string lives in i18n/en.yaml and i18n/hi.yaml with the same keys (tests check this). New Hindi lines get "# REVIEW: Hindi reviewer".
 - Every displayed number carries year, festival, phase, report file and source_page.
 - MIT licence. Small modules. Each function's docstring names the BR id it implements.
-- Run pytest before every commit.
+- Run pytest before every commit (it also runs the mocked AI tests in tests/js; needs Node.js 18+, uses no network).

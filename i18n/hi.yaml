@@ -109,6 +109,73 @@ ui:
   report_year: "MPPCB रिपोर्ट {year}"   # REVIEW: Hindi reviewer
   cpcb_criteria: CPCB जल-गुणवत्ता मानदंड   # REVIEW: Hindi reviewer
   updated: "डेटा तैयार: {date}"   # REVIEW: Hindi reviewer
+  nav_overview: "सारांश"   # REVIEW: Hindi reviewer
+  nav_analytics: "विश्लेषण"   # REVIEW: Hindi reviewer
+  nav_ask: "पूछें"   # REVIEW: Hindi reviewer
+  nav_data: "डेटा और पद्धति"   # REVIEW: Hindi reviewer
+  hist_badge: "ऐतिहासिक डेटा: MPPCB जांच 2023 से 2025, लाइव नहीं"   # REVIEW: Hindi reviewer
+  ai_ready: "AI व्याख्या चालू"   # REVIEW: Hindi reviewer
+  ai_static: "इस प्रति में AI व्याख्या नहीं"   # REVIEW: Hindi reviewer
+  ai_offline: "AI व्याख्या के लिए इंटरनेट चाहिए"   # REVIEW: Hindi reviewer
+  ai_off: "AI व्याख्या सेट नहीं है"   # REVIEW: Hindi reviewer
+  ai_checking: "AI जांच रहे हैं…"   # REVIEW: Hindi reviewer
+  snapshot: "{rows} रीडिंग · {years} · {ghats} घाटों का डेटा, {nohist} बिना डेटा · {valid} मापी गईं, {bdl} BDL, {missing} उपलब्ध नहीं"   # REVIEW: Hindi reviewer
+  snapshot_link: "डेटा कैसे काम करता है"   # REVIEW: Hindi reviewer
+  analytics_title: "रीडिंग देखें और समझें"   # REVIEW: Hindi reviewer
+  analytics_lede: "ऐतिहासिक रीडिंग छांटें, क्रम सूची क्रमबद्ध करें और घाटों की तुलना करें। अंक, स्तर और क्रम हमेशा अंक-गणना प्रणाली और पूरे डेटा से आते हैं।"   # REVIEW: Hindi reviewer
+  f_ghat: "घाट"   # REVIEW: Hindi reviewer
+  f_year: "वर्ष"   # REVIEW: Hindi reviewer
+  f_fest: "त्योहार"   # REVIEW: Hindi reviewer
+  f_phase: "चरण"   # REVIEW: Hindi reviewer
+  f_param: "मानक"   # REVIEW: Hindi reviewer
+  f_priority: "प्राथमिकता"   # REVIEW: Hindi reviewer
+  f_all: "सभी"   # REVIEW: Hindi reviewer
+  f_reset: "फ़िल्टर हटाएं"   # REVIEW: Hindi reviewer
+  search: "घाट खोजें"   # REVIEW: Hindi reviewer
+  filtered_note: "इन फ़िल्टर के साथ {total} में से {n} रीडिंग। अंक, स्तर और क्रम हमेशा पूरे डेटा से आते हैं।"   # REVIEW: Hindi reviewer
+  no_rows: "इन फ़िल्टर से कोई रीडिंग नहीं मिली।"   # REVIEW: Hindi reviewer
+  sec_table: "क्रम तालिका"   # REVIEW: Hindi reviewer
+  sec_matrix: "रीडिंग तालिका"   # REVIEW: Hindi reviewer
+  sec_change: "विसर्जन से पहले बनाम दौरान"   # REVIEW: Hindi reviewer
+  sec_trend: "हर घाट की हर रीडिंग"   # REVIEW: Hindi reviewer
+  sec_cover: "उपलब्ध बनाम अनुपलब्ध रीडिंग"   # REVIEW: Hindi reviewer
+  sec_factors: "हर अंक किससे बना है"   # REVIEW: Hindi reviewer
+  sec_compare: "घाटों की तुलना"   # REVIEW: Hindi reviewer
+  col_rank: "क्रम"   # REVIEW: Hindi reviewer
+  col_ghat: "घाट"   # REVIEW: Hindi reviewer
+  col_score: "अंक"   # REVIEW: Hindi reviewer
+  col_tier: "प्राथमिकता"   # REVIEW: Hindi reviewer
+  col_coverage: "उपलब्धता"   # REVIEW: Hindi reviewer
+  col_range: "क्रम का दायरा"   # REVIEW: Hindi reviewer
+  col_flags: "चेतावनी"   # REVIEW: Hindi reviewer
+  col_reason: "मुख्य कारण"   # REVIEW: Hindi reviewer
+  col_compare: "तुलना"   # REVIEW: Hindi reviewer
+  col_event: "अवसर"   # REVIEW: Hindi reviewer
+  sort_by: "{col} के अनुसार क्रमबद्ध करें"   # REVIEW: Hindi reviewer
+  compare_hint: "तुलना के लिए तालिका में 2 से 4 घाट चुनें।"   # REVIEW: Hindi reviewer
+  ask_selected: "चुने गए घाटों के बारे में पूछें"   # REVIEW: Hindi reviewer
+  matrix_note: "खाने में दर्ज मान है। धारीदार यानी नमूना नहीं या तालिका नहीं। लाल यानी क्लास B सीमा से बाहर।"   # REVIEW: Hindi reviewer
+  nolimit_note: "{param} के लिए क्लास B सीमा तय नहीं है, इसलिए मान बिना पास या फेल के दिखाए गए हैं।"   # REVIEW: Hindi reviewer
+  change_note: "हर रेखा एक घाट और त्योहार पर विसर्जन से पहले (खाली बिंदु) से विसर्जन के दौरान (भरा बिंदु) तक है। जिन जोड़ियों में कोई मान नहीं है, वे गिनी गई हैं, खींची नहीं गईं।"   # REVIEW: Hindi reviewer
+  not_comparable: "जोड़ियां जिनकी तुलना संभव नहीं (कोई मान नहीं): {n}"   # REVIEW: Hindi reviewer
+  worse_label: "खराब"   # REVIEW: Hindi reviewer
+  better_label: "बेहतर"   # REVIEW: Hindi reviewer
+  trend_note: "हर पैनल एक घाट पर {param} की हर रीडिंग दिखाता है: हर त्योहार में पहले, दौरान और एक सप्ताह बाद। रेखा कभी अनुपलब्ध रीडिंग को पार नहीं करती।"   # REVIEW: Hindi reviewer
+  cover_note: "ऊपर के फ़िल्टर के साथ रीडिंग की गिनती।"   # REVIEW: Hindi reviewer
+  factors_note: "अंकों के हर भाग से मिले अंक, 100 में से। अंक-गणना प्रणाली से निकाले गए।"   # REVIEW: Hindi reviewer
+  lbl_valid: "मापी गई"   # REVIEW: Hindi reviewer
+  lbl_bdl: "BDL"   # REVIEW: Hindi reviewer
+  lbl_missing: "अनुपलब्ध"   # REVIEW: Hindi reviewer
+  cmp_lede: "एक ही मानक और चरण, हर त्योहार के लिए। केवल एक जैसी रीडिंग की तुलना होती है।"   # REVIEW: Hindi reviewer
+  cmp_fair: "{m} में से {n} त्योहारों में हर चुने गए घाट की मापी गई रीडिंग है।"   # REVIEW: Hindi reviewer
+  cmp_flag: "पूरी तरह एक जैसी तुलना नहीं: कुछ त्योहारों में एक या अधिक घाट की रीडिंग नहीं है। उन पंक्तियों की तुलना सावधानी से करें।"   # REVIEW: Hindi reviewer
+  cmp_none: "डेटा वाले कम से कम 2 घाट चुनें।"   # REVIEW: Hindi reviewer
+  kind_fact: "दर्ज"   # REVIEW: Hindi reviewer
+  kind_calc: "गणना"   # REVIEW: Hindi reviewer
+  kind_rec: "सुझाव"   # REVIEW: Hindi reviewer
+  kind_note: "दर्ज = MPPCB रिपोर्ट की रीडिंग। गणना = अंक-गणना प्रणाली से निकाला गया। सुझाव = अधिकारी के निर्णय के लिए मार्गदर्शन।"   # REVIEW: Hindi reviewer
+  verify_q: "कार्रवाई से पहले जांचें"   # REVIEW: Hindi reviewer
+  brief_review: "प्रस्तावित कामों को निर्देश के रूप में उपयोग से पहले जिम्मेदार अधिकारी की समीक्षा जरूरी है।"   # REVIEW: Hindi reviewer
 flag:
   identity_uncertain: पहचान अनिश्चित, दो अलग जगह हो सकती हैं   # REVIEW: Hindi reviewer
   limited_data: सीमित डेटा   # REVIEW: Hindi reviewer
@@ -285,3 +352,160 @@ site:                       # BR-64 हर स्थल के सामान�
     - एकत्र की गई सामग्री को न जलाएं।   # REVIEW: Hindi reviewer
   after:
     - बची हुई मूर्ति सामग्री और मलबा विसर्जन के 48 घंटे के भीतर हटाएं।   # REVIEW: Hindi reviewer
+actions:                 # every line below needs approval.  REVIEW: Hindi reviewer
+  guidance: "सुझाए गए काम रीडिंग और नियमों से मार्गदर्शन हैं, आधिकारिक निर्देश नहीं। निर्णय और जिम्मेदारी अधिकारी तय करते हैं।"   # REVIEW: Hindi reviewer
+  tick_note: "निशान केवल इसी उपकरण पर एक नोट है। यह काम की पुष्टि या सत्यापन नहीं करता, और अन्य टीमें इसे नहीं देख सकतीं।"   # REVIEW: Hindi reviewer
+  why: "क्यों"   # REVIEW: Hindi reviewer
+  role: "सुझाई गई भूमिका"   # REVIEW: Hindi reviewer
+  verify: "सत्यापन"   # REVIEW: Hindi reviewer
+  site_why: "CPCB मूर्ति विसर्जन दिशानिर्देश (2010) से सामान्य मार्गदर्शन, रीडिंग से नहीं।"   # REVIEW: Hindi reviewer
+  site_role: "घाट प्रभारी और सफाई टीम"   # REVIEW: Hindi reviewer
+  site_verify: "स्थल पर जांचें और तारीख दर्ज करें।"   # REVIEW: Hindi reviewer
+  do_check_why: "ऑक्सीजन की कमी {max} में से {points} अंक: {valid} में से {below} रीडिंग में DO {do_min} mg/l से कम।"   # REVIEW: Hindi reviewer
+  cleaning_why: "जैविक प्रदूषण भार {max} में से {points} अंक: {valid} में से {above} रीडिंग में BOD {bod_max} mg/l से अधिक।"   # REVIEW: Hindi reviewer
+  test_during_why: "विसर्जन का असर {max} में से {points} अंक: जांच योग्य {tested} में से {worse} जोड़ियों में विसर्जन के दौरान खराब।"   # REVIEW: Hindi reviewer
+  retest_after_why: "सुधार {max} में से {points} अंक: जांच योग्य {tested} में से {worse} जोड़ियों में एक सप्ताह बाद भी खराब।"   # REVIEW: Hindi reviewer
+  metals_why: "धातु में उछाल दर्ज: {spikes}। डेटा से कारण स्थापित नहीं होता।"   # REVIEW: Hindi reviewer
+  fill_gap_why: "अपेक्षित DO और BOD की {missing} रीडिंग उपलब्ध नहीं हैं (नमूना नहीं या तालिका नहीं)।"   # REVIEW: Hindi reviewer
+  baseline_test_why: "2023 से 2025 की रिपोर्टों में कोई रीडिंग नहीं।"   # REVIEW: Hindi reviewer
+  do_check_role: "जल जांच टीम (MPPCB या मान्य प्रयोगशाला) और घाट प्रभारी"   # REVIEW: Hindi reviewer
+  cleaning_role: "घाट की सफाई टीम"   # REVIEW: Hindi reviewer
+  test_during_role: "जल जांच टीम"   # REVIEW: Hindi reviewer
+  retest_after_role: "जल जांच टीम"   # REVIEW: Hindi reviewer
+  metals_role: "जल जांच टीम (क्रोमियम, सीसा, जस्ता, तांबा)"   # REVIEW: Hindi reviewer
+  fill_gap_role: "MPPCB के साथ नमूने का समन्वय करने वाले अधिकारी"   # REVIEW: Hindi reviewer
+  baseline_test_role: "जल जांच टीम"   # REVIEW: Hindi reviewer
+  do_check_verify: "विसर्जन शुरू होने से पहले DO परिणाम और प्रयोगशाला रिपोर्ट संख्या दर्ज करें।"   # REVIEW: Hindi reviewer
+  cleaning_verify: "स्थल पर स्वयं जांचें और तारीख व टीम दर्ज करें।"   # REVIEW: Hindi reviewer
+  test_during_verify: "पुष्टि करें कि नमूना विसर्जन के दौरान लिया गया और रिपोर्ट रखें।"   # REVIEW: Hindi reviewer
+  retest_after_verify: "एक सप्ताह बाद के परिणाम की तुलना विसर्जन से पहले के परिणाम से करें।"   # REVIEW: Hindi reviewer
+  metals_verify: "जांचें कि प्रयोगशाला ने चारों धातुएं उनकी पहचान सीमा के साथ बताईं।"   # REVIEW: Hindi reviewer
+  fill_gap_verify: "पुष्टि करें कि DO और BOD की जांच पहले, दौरान और एक सप्ताह बाद तय है।"   # REVIEW: Hindi reviewer
+  baseline_test_verify: "आधार जांच रिपोर्ट रखें और प्रकाशित होने पर डेटा में जोड़ें।"   # REVIEW: Hindi reviewer
+assist:                 # every line below needs approval.  REVIEW: Hindi reviewer
+  title: "डेटा के बारे में पूछें"   # REVIEW: Hindi reviewer
+  lede: "अंग्रेज़ी या हिन्दी में पूछें। आम प्रश्नों का उत्तर बिना AI के सीधे डेटा से मिलता है। अन्य प्रश्न केवल संबंधित प्रमाण के साथ Gemini को जाते हैं, और उत्तर की हर संख्या और स्रोत आपको दिखाने से पहले जांचे जाते हैं।"   # REVIEW: Hindi reviewer
+  notice: "AI के उत्तर गलत हो सकते हैं। हर दावे को उसकी रिपोर्ट के पृष्ठ से मिलाएं। डेटा ऐतिहासिक (2023 से 2025) है: यह आज के पानी के बारे में कुछ नहीं कहता, और कोई स्वास्थ्य दावा नहीं करता।"   # REVIEW: Hindi reviewer
+  placeholder: "घाट, रीडिंग या क्रम के बारे में प्रश्न लिखें"   # REVIEW: Hindi reviewer
+  send: "पूछें"   # REVIEW: Hindi reviewer
+  clear: "बातचीत हटाएं"   # REVIEW: Hindi reviewer
+  copy: "उत्तर कॉपी करें"   # REVIEW: Hindi reviewer
+  copied: "कॉपी हो गया"   # REVIEW: Hindi reviewer
+  retry: "फिर से"   # REVIEW: Hindi reviewer
+  thinking: "प्रमाण जांच रहे हैं…"   # REVIEW: Hindi reviewer
+  computed: "डेटा से गणना, बिना AI"   # REVIEW: Hindi reviewer
+  ai_badge: "Gemini की व्याख्या, प्रमाण से जांची गई"   # REVIEW: Hindi reviewer
+  unverified: "प्रमाण से मेल नहीं"   # REVIEW: Hindi reviewer
+  findings: "मुख्य बातें"   # REVIEW: Hindi reviewer
+  evidence: "प्रमाण"   # REVIEW: Hindi reviewer
+  limitations: "सीमाएं"   # REVIEW: Hindi reviewer
+  next_steps: "सुझाए गए अगले कदम (निर्णय अधिकारी का)"   # REVIEW: Hindi reviewer
+  facts: "अंक-गणना प्रणाली से"   # REVIEW: Hindi reviewer
+  insufficient: "उपलब्ध डेटा इसका पूरा उत्तर नहीं दे सकता।"   # REVIEW: Hindi reviewer
+  ask_ai: "Gemini से इसकी व्याख्या पूछें"   # REVIEW: Hindi reviewer
+  context: "आधार"   # REVIEW: Hindi reviewer
+  context_all: "पूरा डेटा, {scope}"   # REVIEW: Hindi reviewer
+  context_ghats: "चुने गए घाट: {names}"   # REVIEW: Hindi reviewer
+  context_clear: "पूरा डेटा लें"   # REVIEW: Hindi reviewer
+  empty: "सुझाया गया प्रश्न चुनें या अपना लिखें।"   # REVIEW: Hindi reviewer
+  err_timeout: "Gemini ने उत्तर देने में बहुत समय लिया। फिर से कोशिश करें, या सुझाया गया प्रश्न लें जिसे AI नहीं चाहिए।"   # REVIEW: Hindi reviewer
+  err_rate: "कम समय में बहुत अधिक प्रश्न। एक मिनट रुकें, फिर कोशिश करें।"   # REVIEW: Hindi reviewer
+  err_quota: "इस तैनाती का Gemini कोटा खत्म हो गया है। डैशबोर्ड और बिना-AI उत्तर अब भी काम करते हैं।"   # REVIEW: Hindi reviewer
+  err_unavailable: "AI सहायक यहां उपलब्ध नहीं है। डैशबोर्ड और बिना-AI उत्तर अब भी काम करते हैं।"   # REVIEW: Hindi reviewer
+  err_bad: "Gemini के उत्तर को प्रमाण से जांचा नहीं जा सका, इसलिए नहीं दिखाया गया। फिर से कोशिश करें।"   # REVIEW: Hindi reviewer
+  err_offline: "आप ऑफ़लाइन हैं। AI व्याख्या के लिए इंटरनेट चाहिए; बिना-AI उत्तर अब भी काम करते हैं।"   # REVIEW: Hindi reviewer
+  err_generic: "AI अनुरोध में कुछ गड़बड़ हुई। फिर से कोशिश करें।"   # REVIEW: Hindi reviewer
+  err_invalid: "कृपया 3 से 600 अक्षरों का प्रश्न लिखें।"   # REVIEW: Hindi reviewer
+  no_match: "बिना AI मैं इनका उत्तर दे सकता हूं: शीर्ष घाट, कोई घाट उस क्रम पर क्यों है, डेटा की कमियां, घाटों की तुलना, DO और BOD का अर्थ, और कार्रवाई से पहले क्या जांचें। सुझाए गए प्रश्नों में से कोई चुनें।"   # REVIEW: Hindi reviewer
+  warn_dropped: "AI उत्तर के {n} संदर्भ डेटा से मेल नहीं खाए और हटा दिए गए।"   # REVIEW: Hindi reviewer
+  warn_numbers: "{n} कथनों में ऐसी संख्या है जो प्रमाण में नहीं है। वे चिह्नित हैं, उन पर भरोसा न करें।"   # REVIEW: Hindi reviewer
+  warn_urls: "AI द्वारा लिखे वेब लिंक हटा दिए गए। केवल डेटा के रिपोर्ट लिंक दिखाए गए हैं।"   # REVIEW: Hindi reviewer
+  warn_health: "स्वास्थ्य या सुरक्षा संबंधी शब्द हटा दिए गए: डेटा इसका समर्थन नहीं करता।"   # REVIEW: Hindi reviewer
+  chips:
+    - "किन घाटों के ऐतिहासिक प्राथमिकता अंक सबसे अधिक हैं?"   # REVIEW: Hindi reviewer
+    - "बैरागढ़ का क्रम ऊंचा क्यों है?"   # REVIEW: Hindi reviewer
+    - "विसर्जन से पहले, दौरान और बाद में रीडिंग कैसे बदलीं?"   # REVIEW: Hindi reviewer
+    - "किन घाटों में डेटा की बड़ी कमी है?"   # REVIEW: Hindi reviewer
+    - "घुलित ऑक्सीजन और BOD को सरल हिन्दी में समझाइए।"   # REVIEW: Hindi reviewer
+    - "इस क्रम पर कार्रवाई से पहले अधिकारी को क्या जांचना चाहिए?"   # REVIEW: Hindi reviewer
+    - "मौजूदा डैशबोर्ड डेटा से एक संक्षिप्त नोट तैयार करें।"   # REVIEW: Hindi reviewer
+    - "चुने गए घाटों की एक ही ऐतिहासिक अवधि में तुलना करें।"   # REVIEW: Hindi reviewer
+  a_top: "निर्धारित अंक-गणना ({scope}) के अनुसार सबसे अधिक ऐतिहासिक प्राथमिकता: {list}। यह 2023 से 2025 की दर्ज रीडिंग का क्रम है, आज के पानी का माप नहीं।"   # REVIEW: Hindi reviewer
+  a_top_item: "{rank}. {name}, 100 में से {total}, {tier}"   # REVIEW: Hindi reviewer
+  a_why: "{name} के अंक 100 में से {total} ({tier}) हैं और इस दृश्य में क्रम {rank} है। {reason}। डेटा उपलब्धता {coverage} है। {stability}।"   # REVIEW: Hindi reviewer
+  a_why_parts: "अंकों के भाग: {parts}।"   # REVIEW: Hindi reviewer
+  a_nohist: "{name} की 2023 से 2025 की रिपोर्टों में कोई रीडिंग नहीं है, इसलिए कोई अंक नहीं। आधार जांच सुझाई गई है।"   # REVIEW: Hindi reviewer
+  a_gaps: "इस दृश्य में डेटा की कमियां: {list}।"   # REVIEW: Hindi reviewer
+  a_gap_item: "{name}: उपलब्धता {coverage}, अपेक्षित DO या BOD की {missing} रीडिंग नहीं"   # REVIEW: Hindi reviewer
+  a_change: "{param} विसर्जन से पहले बनाम दौरान: दोनों रीडिंग वाली {pairs} जोड़ियों में से {worse} में दौरान खराब ({missing} जोड़ियों में कोई मान नहीं था)।"   # REVIEW: Hindi reviewer
+  a_compare: "{param}, {phase}: {fair}"   # REVIEW: Hindi reviewer
+  a_terms: "घुलित ऑक्सीजन (DO) पानी में घुली वह ऑक्सीजन है जिसकी मछलियों और अन्य जलीय जीवों को जरूरत होती है; CPCB क्लास B में कम से कम {do_min} mg/l चाहिए। BOD (जैव-रासायनिक ऑक्सीजन मांग) बताता है कि जैविक कचरा सड़ते समय कितनी ऑक्सीजन खर्च करता है; क्लास B में अधिकतम {bod_max} mg/l की अनुमति है। कम DO और अधिक BOD दोनों पानी में भारी जैविक भार की ओर इशारा करते हैं।"   # REVIEW: Hindi reviewer
+  a_verify: "कार्रवाई से पहले: पुष्टि करें कि BMC ने इस विसर्जन के लिए कौन से घाट तय किए हैं; मुख्य रीडिंग को रिपोर्ट के पृष्ठों से मिलाएं; पास-पास के क्रम (मिलते दायरे) को एक समूह मानें; ध्यान रखें कि इकाइयां मानी गई हैं और टोटल कोलीफॉर्म की जांच नहीं हुई; और नई जांच कराएं, क्योंकि ये रीडिंग 2023 से 2025 की हैं।"   # REVIEW: Hindi reviewer
+  a_brief: "संक्षिप्त नोट स्क्रीन का एक पृष्ठ का नोट इसी अंक-गणना प्रणाली से बना है: शीर्ष 3 घाट उनकी रीडिंग और रिपोर्ट पृष्ठों के साथ, डेटा की कमियां और एक ईमानदारी बॉक्स। समीक्षा के बाद प्रिंट, कॉपी या साझा करने के लिए खोलें।"   # REVIEW: Hindi reviewer
+  a_live: "घाट वॉच में केवल 2023 से 2025 की MPPCB रीडिंग हैं। इसमें कोई वर्तमान या लाइव माप नहीं है, इसलिए यह नहीं बता सकता कि अभी पानी कैसा है। इसके लिए प्रयोगशाला से नया नमूना चाहिए।"   # REVIEW: Hindi reviewer
+  a_health: "यह उपकरण केवल रीडिंग की CPCB क्लास B सीमा से तुलना करता है। यह नहीं बता सकता कि पानी स्नान या किसी मानवीय उपयोग के योग्य है या नहीं, या स्वास्थ्य पर इसका असर होता है या नहीं।"   # REVIEW: Hindi reviewer
+  lim_hist: "रीडिंग केवल 2023 से 2025 की हैं।"   # REVIEW: Hindi reviewer
+  lim_units: "इकाइयां मानी गई हैं; रिपोर्टों में छपी नहीं हैं।"   # REVIEW: Hindi reviewer
+  lim_coliform: "टोटल कोलीफॉर्म डेटा में नहीं है।"   # REVIEW: Hindi reviewer
+  lim_relative: "क्रम तुलनात्मक है: कोई घाट पूरे समय सीमा के भीतर नहीं रहा।"   # REVIEW: Hindi reviewer
+  lim_few: "हर घाट के केवल कुछ नमूना अवसर हैं।"   # REVIEW: Hindi reviewer
+  step_open: "घाट का प्रमाण पृष्ठ खोलें और रिपोर्ट के पृष्ठ जांचें।"   # REVIEW: Hindi reviewer
+  step_plan: "कार्य योजना देखें और काम सौंपें।"   # REVIEW: Hindi reviewer
+  step_test: "विसर्जन से पहले, दौरान और एक सप्ताह बाद नई जांच कराएं।"   # REVIEW: Hindi reviewer
+datapage:                 # every line below needs approval.  REVIEW: Hindi reviewer
+  title: "डेटा और पद्धति"   # REVIEW: Hindi reviewer
+  lede: "डेटा क्या है, अंक कैसे निकलते हैं, AI सहायक को प्रमाण तक कैसे सीमित रखा जाता है, और यह सब क्या नहीं बता सकता।"   # REVIEW: Hindi reviewer
+  issues: "जांचने योग्य डेटा बिंदु"   # REVIEW: Hindi reviewer
+  issue_rl: "{param} {year} {festival}: हर घाट और चरण में एक ही मान {value} ({count} रीडिंग)। यह प्रयोगशाला की रिपोर्टिंग सीमा जैसा लगता है, इसलिए उछाल की जांच से बाहर है।"   # REVIEW: Hindi reviewer
+  issue_identity: "{name}: गणेश और दुर्गा की तालिकाओं में स्थल के नाम अलग हैं, इसलिए ये दो जगह हो सकती हैं।"   # REVIEW: Hindi reviewer
+  issue_notable: "{names}: रिपोर्ट में {festival} {year} की तालिका नहीं।"   # REVIEW: Hindi reviewer
+  sections:
+    - id: provenance
+      h: "डेटा कहां से आता है"   # REVIEW: Hindi reviewer
+      p:
+        - "हर रीडिंग {file} से आती है: {rows} पंक्तियां, जो आयोजकों ने दीं और {years} की MPPCB मूर्ति-विसर्जन रिपोर्टों से जांचीं। हर पंक्ति में उसका रिपोर्ट पृष्ठ दर्ज है, और हर 'रिपोर्ट पृ.' लिंक आधिकारिक PDF का वही पृष्ठ खोलता है।"   # REVIEW: Hindi reviewer
+        - "ऐप किसी सरकारी पोर्टल से डेटा नहीं लेता। यह केवल CSV और rules.yaml व ghats.yaml की दर्ज सेटिंग का उपयोग करता है।"   # REVIEW: Hindi reviewer
+    - id: period
+      h: "अवधि और नमूने के चरण"   # REVIEW: Hindi reviewer
+      p:
+        - "वर्ष: {years}। त्योहार: गणेश और दुर्गा। चरण: विसर्जन से पहले, दौरान और एक सप्ताह बाद। {ghats_with_data} घाटों की रीडिंग हैं; {nohist} निर्धारित घाट की कोई रीडिंग नहीं है।"   # REVIEW: Hindi reviewer
+        - "यह ऐतिहासिक डेटा है। इसमें कुछ भी लाइव या वर्तमान माप नहीं है।"   # REVIEW: Hindi reviewer
+    - id: status
+      h: "मापी गई, BDL और अनुपलब्ध"   # REVIEW: Hindi reviewer
+      p:
+        - "{rows} रीडिंग में से {valid} मापी गई संख्याएं हैं, {bdl} BDL हैं (पहचान सीमा से नीचे: बहुत कम, पर शून्य नहीं और अनुपलब्ध नहीं) और {missing} अनुपलब्ध हैं (रिपोर्ट में खाली, _, * या **)।"   # REVIEW: Hindi reviewer
+        - "अनुपलब्ध रीडिंग को कभी साफ या शून्य नहीं माना जाता। उन्हें पास-फेल गिनती से बाहर रखा जाता है और धारीदार दिखाया जाता है। BDL हमेशा BDL ही दिखता है।"   # REVIEW: Hindi reviewer
+    - id: units
+      h: "इकाइयां"   # REVIEW: Hindi reviewer
+      p:
+        - "रिपोर्टों में इकाइयां छपी नहीं हैं। ऐप हर जांच की मानक इकाई 'इकाई मानी गई' लिखकर दिखाता है: {units}।"   # REVIEW: Hindi reviewer
+    - id: method
+      h: "अंक कैसे बनते हैं"   # REVIEW: Hindi reviewer
+      p:
+        - "रीडिंग की तुलना CPCB क्लास B (संगठित बाहरी स्नान) से होती है: DO कम से कम {do_min} mg/l, BOD अधिकतम {bod_max} mg/l, pH {ph_min} से {ph_max}। धातुओं और अन्य मानकों की क्लास B सीमा नहीं है और उनसे अंक नहीं मिलते।"   # REVIEW: Hindi reviewer
+        - "100 में से अंक पांच भागों को जोड़कर बनते हैं: ऑक्सीजन की कमी (अधिकतम {oxygen}), जैविक भार ({organic}), pH ({ph}), विसर्जन का असर ({impact}) और सुधार ({recovery})। स्तर: {p1} या अधिक पर प्राथमिकता 1, {p2} से प्राथमिकता 2, उससे कम प्राथमिकता 3। यह नियम-आधारित अंक है, पूर्वानुमान मॉडल नहीं। हर भार rules.yaml में BMC या MPPCB की समीक्षा के लिए प्रस्ताव है।"   # REVIEW: Hindi reviewer
+    - id: sensitivity
+      h: "क्रम की संवेदनशीलता"   # REVIEW: Hindi reviewer
+      p:
+        - "क्रम {runs} यादृच्छिक भार-सेट में दोबारा निकाला जाता है, हर भार अपने मान के आधे से डेढ़ गुना तक। घाट का क्रम दायरा बताता है कि उसका क्रम कितना बदलता है। मिलते दायरे का अर्थ है कि उन घाटों का आपसी क्रम भार पर निर्भर है।"   # REVIEW: Hindi reviewer
+    - id: ai
+      h: "AI सहायक को प्रमाण कैसे मिलता है"   # REVIEW: Hindi reviewer
+      p:
+        - "AI कभी पूरा डेटा नहीं देखता और कभी अंक तय नहीं करता। हर प्रश्न के लिए ऐप संबंधित घाट, मानक और रीडिंग, और अंक-गणना प्रणाली से पहले से निकले अंक चुनता है। केवल वही प्रमाण Gemini को जाता है, जिसे बिना नई संख्या जोड़े व्याख्या करने को कहा जाता है।"   # REVIEW: Hindi reviewer
+        - "उत्तर दिखाने से पहले सर्वर उसे जांचता है: जो संदर्भ डेटा से मेल नहीं खाते वे हटाए जाते हैं, प्रमाण में न मिलने वाली संख्या वाले कथन चिह्नित होते हैं, वेब लिंक हटाए जाते हैं और स्वास्थ्य या सुरक्षा के शब्द हटाए जाते हैं। रिपोर्ट लिंक हमेशा डेटा से आते हैं, AI से कभी नहीं। आम प्रश्नों का उत्तर बिना AI के मिलता है।"   # REVIEW: Hindi reviewer
+    - id: cannot
+      h: "ऐप क्या निष्कर्ष नहीं निकाल सकता"   # REVIEW: Hindi reviewer
+      p:
+        - "यह नहीं बता सकता कि आज पानी कैसा है, 2026 की जल गुणवत्ता का पूर्वानुमान नहीं दे सकता, यह नहीं बता सकता कि पानी स्नान या किसी मानवीय उपयोग के योग्य है, किसी बदलाव का कारण स्थापित नहीं कर सकता, और किसी काम के होने की पुष्टि नहीं कर सकता। इसे BMC, MPPCB या CPCB की स्वीकृति नहीं है।"   # REVIEW: Hindi reviewer
+    - id: update
+      h: "नए त्योहार के बाद अपडेट"   # REVIEW: Hindi reviewer
+      p:
+        - "CSV में उन्हीं कॉलम में नई पंक्तियां जोड़ें, rules.yaml में वर्ष और src/sources.py में रिपोर्ट फाइल जोड़ें, .venv/bin/python -m src.build और टेस्ट चलाएं, फिर docs फ़ोल्डर प्रकाशित करें। AI सहायक भी यही नया डेटा पढ़ता है।"   # REVIEW: Hindi reviewer
+    - id: offline
+      h: "ऑफ़लाइन क्या चलता है"   # REVIEW: Hindi reviewer
+      p:
+        - "AI व्याख्या को छोड़कर सब कुछ ऑफ़लाइन और डिस्क से चलता है: सारांश, विश्लेषण, प्रमाण, तुलना, बिना-AI उत्तर, कार्य योजना, संक्षिप्त नोट और यह पृष्ठ। AI व्याख्या के लिए इंटरनेट और सेट की गई कुंजी वाली Vercel तैनाती चाहिए; इन्हें कभी कैश नहीं किया जाता।"   # REVIEW: Hindi reviewer
+    - id: before
+      h: "सरकारी उपयोग से पहले"   # REVIEW: Hindi reviewer
+      p:
+        - "हिन्दी पाठक हिन्दी पाठ स्वीकृत करें; कोई दूसरा व्यक्ति docs/VERIFICATION.md की संख्याएं PDF से मिलाए; BMC घाट सूची की पुष्टि करे; BMC या MPPCB भार और स्तर की समीक्षा करें; और उपकरण का किसी वास्तविक अधिकारी के साथ परीक्षण हो, सरकारी सर्वर पर, एक नामित जिम्मेदार व्यक्ति के साथ।"   # REVIEW: Hindi reviewer

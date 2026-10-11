@@ -63,6 +63,7 @@ def build_brief(result, scope, ranges, rules, i18n, lang, date):
     blocks.append(("box_h", t["honesty"]))
     for k in ("honesty_units", "honesty_relative", "honesty_coliform", "honesty_metals", "honesty_health"):
         blocks.append(("box", t[k].format(**head)))
+    blocks.append(("p", ui["brief_review"]))
     blocks.append(("h2", t["sources"]))
     for year in sorted(REPORTS):
         blocks.append(("src", f"{BASE_URL}{REPORTS[year]}"))

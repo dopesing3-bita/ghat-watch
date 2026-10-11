@@ -7,7 +7,7 @@ from .brief import build_briefs
 from .config import ROOT, load_ghats, load_rules
 from .engine import evaluate
 from .i18n import LANGS, load_i18n, reason_text, stability_text
-from .load import load_readings
+from .load import BDL, MISSING, VALID, load_readings
 from .sources import BASE_URL, CRITERIA_URL, REPO_URL, REPORTS
 from .stability import rank_ranges
 
@@ -36,7 +36,7 @@ def build(rules=None, ghats=None, date=None):
         "scopes": result["scopes"],
         "top_stable": top_stable,
         "briefs": build_briefs(result, ranges, rules, i18n, date),
-        "i18n": {lang: {k: i18n[lang][k] for k in ("ui", "flag", "focus", "help", "site")} for lang in LANGS},
+        "i18n": {lang: {k: i18n[lang][k] for k in ("ui", "flag", "focus", "help", "site", "actions", "assist", "datapage")} for lang in LANGS},
         "glossary": i18n["glossary"],
         "reports": {str(y): f"{BASE_URL}{f}" for y, f in REPORTS.items()},
         "criteria_url": CRITERIA_URL,
@@ -46,7 +46,44 @@ def build(rules=None, ghats=None, date=None):
         "limited_below": rules["confidence"]["limited_below"],
         "event": rules["event"],
         "plan": plan_groups(rules),
+        "limits": {k: rules["limits"][k] for k in ("class", "do_min", "bod_max", "ph_min", "ph_max")},
+        "no_limit_parameters": rules["limits"]["no_limit_parameters"],
+        "component_max": component_max(rules),
+        **readings_table(df, ghats),
     }
+
+
+def component_max(rules):
+    """BR-20 to BR-24: maximum points of each score component, read from rules.yaml."""
+    w = rules["weights"]
+    return {"oxygen": w["oxygen"]["share_below_min"] + w["oxygen"]["any_below"] + w["oxygen"]["any_zero"],
+            "organic": w["organic"]["share_above_max"] + w["organic"]["during_high"],
+            "ph": w["ph"]["share_outside"], "impact": w["impact"]["share_worse"], "recovery": w["recovery"]["share_worse"]}
+
+
+def readings_table(df, ghats):
+    """BR-65: every reading for the analytics screens, in a compact form.
+
+    Row: [ghat index, year, festival index, phase index, parameter index, value or null, status, source page].
+    Status is valid / bdl / missing (BR-01, BR-02): bdl and missing rows never carry a number.
+    """
+    ids = [g["id"] for g in ghats]
+    site_to_idx = {g["site"]: i for i, g in enumerate(ghats)}
+    params = list(dict.fromkeys(df["parameter"]))
+    fests, phases = ["Ganesh", "Durga"], ["pre", "during", "after"]
+    units = {p: (df[df["parameter"] == p]["unit_assumed"].iloc[0] or None) for p in params}
+    rows = []
+    for _, r in df.iterrows():
+        v = None if r["status"] != VALID else round(float(r["num"]), 4)
+        rows.append([site_to_idx[r["site"]], int(r["year"]), fests.index(r["festival"]), phases.index(r["phase"]),
+                     params.index(r["parameter"]), v, r["status"], int(r["source_page"])])
+    counts = df["status"].value_counts().to_dict()
+    return {"readings": {"ghat_ids": ids, "festivals": fests, "phases": phases, "parameters": params,
+                         "units": units, "rows": rows},
+            "dataset": {"file": "data/bhopal_ghats_2023_2025.csv", "rows": int(len(df)),
+                        "years": sorted(int(y) for y in df["year"].unique()),
+                        "ghats_with_data": int(df["site"].nunique()), "ghats_in_register": len(ghats),
+                        "status_counts": {k: int(counts.get(k, 0)) for k in (VALID, BDL, MISSING)}}}
 
 
 def plan_groups(rules):

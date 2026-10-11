@@ -98,7 +98,15 @@
         esc(ghatCount(counts.none)) + "</dd></div>");
     }
     return '<section class="hero reveal"><p class="eyebrow">' + esc(ui("hero_eyebrow", { date: fmtDate(eventDay()) })) + '</p><h1 class="display">' + esc(ui("hero_title")) + '</h1><p class="lede">' +
-      esc(ui("hero_lede")) + '</p><dl class="stats">' + stats.join("") + "</dl></section>";
+      esc(ui("hero_lede")) + '</p><dl class="stats">' + stats.join("") + "</dl>" + snapshot() + "</section>";
+  }
+
+  /* BR-65: dataset facts, computed by the build from the CSV. */
+  function snapshot() {
+    var ds = D.dataset, sc = ds.status_counts, y = ds.years;
+    return '<p class="snapshot">' + esc(ui("snapshot", { rows: ds.rows.toLocaleString("en-IN"), years: y[0] + "–" + y[y.length - 1],
+      ghats: ds.ghats_with_data, nohist: ds.ghats_in_register - ds.ghats_with_data, valid: sc.valid, bdl: sc.bdl, missing: sc.missing })) +
+      ' <a href="#/data" class="textlink">' + esc(ui("snapshot_link")) + " →</a></p>";
   }
 
   function howto() {
@@ -343,7 +351,10 @@
       '<header class="detail-head reveal"><p class="eyebrow">' + esc(gl("water_body", g.water_body)) +
       (g.rank ? " · #" + g.rank : "") + '</p><h1 class="display sm">' + esc(name(g)) + "</h1>" +
       '<div class="line1">' + tierBadge(g) + " " + badges(g) + "</div>" +
-      '<p class="meta">' + designated(g) + "</p></header>";
+      '<p class="meta">' + designated(g) + "</p>" + (g.has_history ? '<p class="detail-actions"><a class="button sm" href="#/ask" data-ask="' +
+      esc(g.id) + '">' + esc(ui("nav_ask")) + '</a> <a class="ghost sm" href="#/analytics" data-compare="' + esc(g.id) + '">' +
+      esc(ui("col_compare")) + "</a></p>" : "") + '<p class="note kinds">' + kind("fact") + kind("calc") + kind("rec") + " " +
+      esc(ui("kind_note")) + "</p></header>";
     if (g.flags.indexOf("scope_shift") >= 0) {
       h += '<p class="note">' + esc(ui("scope_shift", {
         n: Math.abs(g.rank - g.other_scope_rank),
@@ -358,12 +369,12 @@
         (g.rank_range.min === g.rank_range.max ? g.rank_range.min : g.rank_range.min + "–" + g.rank_range.max) +
         " <small>" + esc(ui("stat_range_runs", { runs: D.stability_runs })) + "</small></dd></div></dl>";
     }
-    h += '<section class="focus-box reveal"><h2>' + esc(ui("focus")) + '</h2><ul class="focus">' + g.focus.map(function (f) {
+    h += '<section class="focus-box reveal"><h2>' + kind("rec") + esc(ui("focus")) + '</h2><ul class="focus">' + g.focus.map(function (f) {
       return "<li>" + esc(D.i18n[state.lang].focus[f]) + "</li>";
     }).join("") + '</ul><p><a href="#/plan" class="textlink">' + esc(ui("nav_plan")) + " →</a></p></section>";
     if (!g.has_history) return h;
     h += charts();
-    h += '<section class="reveal"><h2>' + esc(ui("components")) + "</h2>";
+    h += '<section class="reveal"><h2>' + kind("calc") + esc(ui("components")) + "</h2>";
     g.components.forEach(function (c) {
       h += '<section class="comp"><div class="comphead"><h3>' + esc(gl("component", c.key)) + '</h3><span class="pts">' +
         c.points.toFixed(1) + " / " + c.max + '</span></div><div class="bar"><i style="width:' +
@@ -424,8 +435,39 @@
     return { done: done, total: total };
   }
 
+  /* BR-61: each suggested action with why (from the scoring engine's facts), a suggested role and what to verify. */
+  function whyText(g, a) {
+    var A = D.i18n[state.lang].actions, c = {};
+    (g.components || []).forEach(function (x) { c[x.key] = x; });
+    var comp = { do_check: "oxygen", cleaning: "organic", test_during: "impact", retest_after: "recovery" }[a];
+    var p = { do_min: D.headline.do_min, bod_max: D.headline.bod_max };
+    if (comp && c[comp]) {
+      Object.keys(c[comp].facts).forEach(function (k) { p[k] = c[comp].facts[k]; });
+      p.points = c[comp].points.toFixed(1); p.max = c[comp].max;
+    }
+    if (a === "metals") {
+      p.spikes = g.spikes.map(function (s) {
+        return gl("parameter", s.parameter) + " " + s.year + " " + gl("festival", s.festival) + " " + s.pre + " → " + s.during;
+      }).join("; ");
+    }
+    if (a === "fill_gap") p.missing = g.coverage.filter(function (x) { return x.status === "missing"; }).length;
+    return fill(A[a + "_why"], p);
+  }
+  function details(why, role, verify) {
+    var A = D.i18n[state.lang].actions;
+    return '<details class="why"><summary>' + esc(A.why) + " · " + esc(A.role) + " · " + esc(A.verify) + "</summary><dl>" +
+      "<dt>" + esc(A.why) + "</dt><dd>" + esc(why) + "</dd><dt>" + esc(A.role) + "</dt><dd>" + esc(role) +
+      "</dd><dt>" + esc(A.verify) + "</dt><dd>" + esc(verify) + "</dd></dl></details>";
+  }
+  function actionItem(g, a, t) {
+    var A = D.i18n[state.lang].actions;
+    return checkbox(tickKey(g, a), t, D.i18n[state.lang].focus[a]).replace("</li>", "") +
+      details(whyText(g, a), A[a + "_role"], A[a + "_verify"]) + "</li>";
+  }
+  function kind(k) { return '<span class="kind k-' + k + '">' + esc(ui("kind_" + k)) + "</span>"; }
+
   function renderPlan() {
-    var t = ticks(), c = planCounts();
+    var t = ticks(), c = planCounts(), A = D.i18n[state.lang].actions;
     var h = '<header class="page-head reveal"><p class="eyebrow">' + esc(countdown()) + '</p><h1 class="display sm">' +
       esc(ui("plan_title")) + '</h1><p class="lede">' + esc(ui("plan_lede")) + "</p></header>" +
       '<div class="actions reveal"><button type="button" id="copy">' + esc(ui("copy")) + "</button> " +
@@ -433,6 +475,7 @@
       esc(ui("whatsapp")) + "</a> " + '<button type="button" id="print">' + esc(ui("print")) + "</button> " +
       '<button type="button" class="ghost" id="plan-reset">' + esc(ui("plan_reset")) + "</button>" +
       '<p class="progress" id="plan-progress" aria-live="polite">' + esc(ui("plan_progress", c)) + "</p></div>" +
+      '<div class="guidance reveal"><p>' + kind("rec") + esc(A.guidance) + "</p><p>" + esc(A.tick_note) + "</p></div>" +
       '<div class="plan">';
     planGroups().forEach(function (grp, gi) {
       h += '<section class="phase reveal" style="--i:' + gi + '"><h2><span class="phase-n">' + (gi + 1) + "</span>" +
@@ -441,14 +484,14 @@
       grp.items.forEach(function (x) {
         h += '<div class="task"><p class="task-ghat"><a href="#/ghat/' + esc(x.g.id) + '">' + esc(name(x.g)) + "</a> " +
           tierBadge(x.g) + '</p><ul class="checks">' + x.actions.map(function (a) {
-            return checkbox(tickKey(x.g, a), t, D.i18n[state.lang].focus[a]);
+            return actionItem(x.g, a, t);
           }).join("") + "</ul></div>";
       });
       var site = D.i18n[state.lang].site;
       h += '<div class="task site"><p class="task-ghat">' + esc(site.title) + ' <span class="badge">' + esc(site.tag) +
         '</span></p><ul class="checks">' + site[grp.key].map(function (text, i) {
           return checkbox(siteKey(grp.key, i), t, text);
-        }).join("") + "</ul></div></section>";
+        }).join("") + "</ul>" + details(A.site_why, A.site_role, A.site_verify) + "</div></section>";
     });
     return h + '</div><p class="note plan-note">' + esc(D.i18n[state.lang].site.note) + "</p>";
   }
@@ -557,7 +600,8 @@
 
   /* Page chrome: utility bar, header, view bar, notice, footer */
   function footer() {
-    var links = [["#/", "nav_ranking"], ["#/plan", "nav_plan"], ["#/brief", "nav_brief"], ["#/help", "nav_help"]];
+    var links = [["#/", "nav_overview"], ["#/analytics", "nav_analytics"], ["#/ask", "nav_ask"], ["#/plan", "nav_plan"],
+      ["#/brief", "nav_brief"], ["#/data", "nav_data"], ["#/help", "nav_help"]];
     var reports = Object.keys(D.reports).sort().map(function (y) {
       return '<li><a href="' + esc(D.reports[y]) + '" target="_blank" rel="noopener">' + esc(ui("report_year", { year: y })) + "</a></li>";
     }).join("") + '<li><a href="' + esc(D.criteria_url) + '" target="_blank" rel="noopener">' + esc(ui("cpcb_criteria")) + "</a></li>";
@@ -585,9 +629,11 @@
     document.getElementById("t-title").textContent = ui("title");
     document.getElementById("t-subtitle").textContent = ui("subtitle");
     document.getElementById("countdown").textContent = countdown();
-    ["ranking", "plan", "brief", "help"].forEach(function (k) {
-      document.querySelector("#nav-" + k + " .nav-label").textContent = ui("nav_" + k);
+    NAV.forEach(function (k) {
+      document.querySelector("#nav-" + k + " .nav-label").textContent = ui(k === "ranking" ? "nav_overview" : "nav_" + k);
     });
+    document.getElementById("hist").textContent = ui("hist_badge");
+    GW.hooks.forEach(function (f) { f(); });
     document.getElementById("view-label").textContent = ui("view");
     document.getElementById("scope-all").textContent = ui("scope_all");
     document.getElementById("scope-durga").textContent = ui("scope_durga");
@@ -614,17 +660,25 @@
     chrome();
     var h = location.hash || "#/";
     var m = h.match(/^#\/ghat\/([\w-]+)/);
+    var ext = (h.match(/^#\/(\w+)/) || [])[1];
     var screen = m ? "detail" : h.indexOf("#/brief") === 0 ? "brief" : h.indexOf("#/plan") === 0 ? "plan" :
-      h.indexOf("#/help") === 0 ? "help" : "ranking";
+      h.indexOf("#/help") === 0 ? "help" : GW.screens[ext] ? ext : "ranking";
     document.body.dataset.screen = screen;
-    ["ranking", "plan", "brief", "help"].forEach(function (k) {
+    NAV.forEach(function (k) {
       var on = screen === k || (k === "ranking" && screen === "detail");
       var a = document.getElementById("nav-" + k);
       a.classList.toggle("on", on);
       if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
     app.innerHTML = m ? renderDetail(m[1]) : screen === "brief" ? renderBrief() : screen === "plan" ? renderPlan() :
-      screen === "help" ? renderHelp() : renderRanking();
+      screen === "help" ? renderHelp() : GW.screens[screen] ? GW.screens[screen].render() : renderRanking();
+    if (GW.screens[screen] && GW.screens[screen].wire) GW.screens[screen].wire();
+    document.querySelectorAll("[data-ask]").forEach(function (a) {
+      a.addEventListener("click", function () { GW.state.selected = [a.dataset.ask]; });
+    });
+    document.querySelectorAll("[data-compare]").forEach(function (a) {
+      a.addEventListener("click", function () { if (GW.state.selected.indexOf(a.dataset.compare) < 0) GW.state.selected.push(a.dataset.compare); });
+    });
     if (screen === "brief") wireCopy(D.briefs[state.scope][state.lang].text);
     if (screen === "plan") { wireCopy(planText()); wirePlan(); }
     if (screen === "help") wireHelp();
@@ -632,6 +686,15 @@
     var hide = document.getElementById("tips-hide");
     if (hide) hide.onclick = function () { state.tips = "hide"; save("tips", "hide"); route(); };
   }
+
+  /* Shared with analytics.js and assistant.js, which register extra screens in GW.screens. */
+  var NAV = ["ranking", "analytics", "ask", "plan", "brief", "data", "help"];
+  var GW = window.GW = {
+    D: D, state: state, ui: ui, gl: gl, esc: esc, fill: fill, name: name, rows: rows, find: find, pct: pct, tw: tw,
+    srcLink: srcLink, tierBadge: tierBadge, badges: badges, kind: kind, save: save, load: load, route: route, wa: wa,
+    wireCopy: wireCopy, fmtDate: fmtDate, screens: {}, hooks: []
+  };
+  state.selected = [];
 
   document.querySelectorAll("[data-scope]").forEach(function (b) {
     b.addEventListener("click", function () { state.scope = b.dataset.scope; save("scope", state.scope); route(); });
@@ -656,10 +719,11 @@
   window.addEventListener("resize", function () {
     clearTimeout(timer);
     timer = setTimeout(function () {
-      if (Math.abs(window.innerWidth - lastW) > 40) { lastW = window.innerWidth; drawCharts(); }
+      if (Math.abs(window.innerWidth - lastW) > 40) { lastW = window.innerWidth; drawCharts(); GW.hooks.forEach(function (f) { f("resize"); }); }
     }, 150);
   });
-  route();
+  // analytics.js and assistant.js load after this file and register their screens before the first render
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", route); else setTimeout(route, 0);
 
   /* Installable and offline when served over http(s), e.g. GitHub Pages. Skipped when opened from disk. */
   if (/^https?:$/.test(location.protocol) && "serviceWorker" in navigator) {

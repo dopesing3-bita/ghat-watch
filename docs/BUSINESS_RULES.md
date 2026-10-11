@@ -57,13 +57,28 @@ Weights and thresholds are proposed policy choices, not science. They live in `r
 | BR-63 | How to use. The guide is fixed text in `i18n/` (no runtime AI). Its numbers (limits, maximum points, tier cut-offs, runs, the BR-31 counts) are filled from `rules.yaml` and the data, never typed in. |
 | BR-64 | Standard site measures. The action plan also lists general measures from the CPCB idol-immersion guidelines (2010) for every site. They are labelled as guidance, are not derived from the readings, and carry no points. |
 
+| BR-65 | Readings table. The build exports every CSV reading (all 13 parameters) with its status: valid, BDL or missing. BDL and missing rows never carry a number. Analytics filters work on this table; scores, tiers and ranks always come from the scoring engine over the whole dataset. |
+
+## AI assistant (Gemini)
+
+| ID | Rule |
+|---|---|
+| BR-80 | Input: questions of 3 to 600 characters, request body under 8 KB, at most 4 ghats, filters limited to known values. Questions are parsed for ghats, parameters, years, festivals and intent in English and Hindi. |
+| BR-81 | Evidence pack: the scoring engine's ranking plus at most 90 matching readings, each with an id, value or status, assumed unit, class B result and report page. Gemini receives nothing else from the dataset. |
+| BR-82 | Comparison: ghats are compared only on the same parameter, phase and festival. Festivals where any selected ghat has no measured reading are flagged as not like-for-like. |
+| BR-83 | No-AI answers: top ghats, why a ghat ranks where it does, data gaps, comparisons, DO and BOD terms, what to verify, the brief and before-versus-during change are answered from the data with fixed templates, labelled as computed. Health, bathing, drinking and current-condition questions get a fixed refusal and never reach the AI. |
+| BR-84 | Reply schema: answer, key_findings (text + evidence_ids), limitations, recommended_next_steps, insufficient_evidence. A reply that does not match is not shown. |
+| BR-85 | Reply checks: evidence ids not in the pack are dropped; statements with numbers not found in the pack are marked "Not matched to the evidence"; web links and sentences about health or safety are removed; report links are built from the data, never taken from the AI; the scoring engine's score, tier and rank are shown beside every AI answer. |
+| BR-86 | Reliability: 25-second total deadline, at most 3 attempts for transient failures, no retry on quota exhaustion, a clear error and retry button otherwise. Never invent an answer to avoid an error. |
+| BR-87 | Secrets and network: the Gemini key is read only from the server-side `GEMINI_API_KEY`; the browser calls only the same-origin `api/gemini` and only when the user asks; AI replies are never cached; the static app works without the endpoint. |
+
 ## The brief
 
 | ID | Rule |
 |---|---|
 | BR-70 | One A4 page: date, top 3 ghats with the numbers behind each, data gaps, honesty box, sources. |
 | BR-71 | Hindi and English come from fixed templates and a glossary file. No runtime AI. A Hindi-reading teammate approves every Hindi string. Both languages show identical numbers. |
-| BR-72 | The honesty box is always present: units assumed, ranking is relative, coliform not covered, metals have no class B limit, no health claims. |
+| BR-72 | The honesty box is always present: units assumed, ranking is relative, coliform not covered, metals have no class B limit, no health claims. The brief also says that proposed actions need the officer's review before use as instructions. |
 
 ## Guardrails from the pack
 

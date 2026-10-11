@@ -5,34 +5,97 @@
 **Live:** [ghat-watch-six.vercel.app](https://ghat-watch-six.vercel.app) · mirror on [GitHub Pages](https://dopesing3-bita.github.io/ghat-watch/) · Hindi: [ghat-watch-six.vercel.app/?lang=hi](https://ghat-watch-six.vercel.app/?lang=hi)
 **Built for:** the Bhopal Municipal Corporation officer who plans Durga visarjan on **20 October 2026** and decides where to send extra cleaning, aeration and water testing.
 
-Ghat Watch ranks Bhopal's immersion ghats by the water-quality risk recorded in three years of MPPCB reports (2023 to 2025, Ganesh and Durga). It shows the plain-words reason for each rank and every reading behind it, each linked to its report page. It turns the ranking into a dated action plan the officer's teams can tick off, and produces a one-page brief in Hindi and English that the officer can forward.
+Ghat Watch helps the BMC officer move from three years of buried water tests to a decision: **understand the situation → investigate the evidence → ask questions → decide priorities → plan actions → communicate findings.** It combines three things in one app:
 
-It is deterministic. There is no language model, no API key, no server, no account and no network call. The officer opens one file, and it works offline.
+- **An analytical dashboard.** Ghats ranked by the water-quality risk recorded in MPPCB reports (2023 to 2025, Ganesh and Durga), with filters, a sortable table, charts of every reading against the CPCB class B limits, like-for-like comparisons of ghats, and a Data & method page. Every number links to its report page.
+- **An evidence-grounded AI assistant (Gemini).** Questions in English or Hindi. Common questions are answered straight from the data with no AI. Other questions go to Gemini with only the matching evidence, and the reply is checked number by number and source by source before it is shown.
+- **Decision support.** A dated action plan (before, on the day, one week after) with why, a suggested role and what to verify for each action, and a one-page Hindi and English brief.
+
+The ranking is deterministic and rule-based. **The AI never sets or changes a score, tier or rank**, and the whole app except AI explanations works offline, from disk or from GitHub Pages.
 
 ## How to run
 
 1. Download or clone this repo.
-2. Open `docs/index.html` in any browser (double-click it). That's it. It works offline. First-time users get a three-step guide on the first screen and a full **How to use** screen.
+2. Open `docs/index.html` in any browser (double-click it). Everything except AI explanations works, offline.
 
-To rebuild the data after editing `rules.yaml` or `ghats.yaml` (Python 3.11):
+To rebuild the data after editing `rules.yaml`, `ghats.yaml` or the CSV (Python 3.11):
 
 3. `python3.11 -m venv .venv && .venv/bin/pip install -r requirements.txt`
 4. `.venv/bin/python -m src.build` writes `docs/data.js` and prints the ranked table.
-5. `.venv/bin/pytest` runs the 55 tests.
+5. `.venv/bin/pytest` runs the 66 Python tests, including the 21 mocked AI tests in `tests/js` (needs Node.js 18 or newer; no network and no API credits used).
 
-`docs/` can also be served from any static web server (for example GitHub Pages or an MPSeDC server). Served that way, it can be installed on a phone's home screen and keeps working with no signal at the ghat (a service worker caches the app's own files; opening from disk skips this).
+**With AI explanations, locally:** `cp .env.example .env.local`, put your key in it, then `set -a; . ./.env.local; set +a; node tools/serve.js` and open http://localhost:8787. Without a key the same server runs everything except AI.
 
 ## The screens
 
-1. **Ranking.** Opens with the countdown to 20 October, the count of ghats in each priority tier and a three-step guide (hide it once you know it). Then the ghats with tier, score out of 100, a one-line reason, data coverage, rank range and badges (limited data, identity uncertain, metals spike, possible reporting-limit value). Arch Bridge is shown as **No history**.
-2. **Ghat detail.** Score, data coverage and rank range at a glance, the suggested focus, and two charts of every DO and BOD reading against the class B limit (missing readings are hatched slots, never points). Then the five score components as bars. Under each is the exact readings table: year, festival, phase, value (unit assumed), class B limit, result, and a **Report p.N** link to that page of the official PDF. Below that are a DO/BOD coverage grid, where missing cells are hatched and never green, and the metals table.
-3. **Action plan.** The suggested actions grouped by date: before 20 October, on the day, and by 27 October (one week after). Each ghat's actions come from its readings (BR-60). Each column also carries the standard site measures from the CPCB idol-immersion guidelines, labelled as such. Teams tick items off; ticks stay on that device. Copy, WhatsApp and print buttons.
-4. **Brief.** One A4 page in Hindi or English: top 3 ghats with their numbers, data gaps, an honesty box and sources. Buttons: copy text, share on WhatsApp, print or save as PDF.
-5. **How to use.** Four steps, the controls, how the score is built (numbers filled from `rules.yaml`), what each badge means, a glossary (DO, BOD, BDL, not sampled, class B), officers' questions, accessibility, and how the department keeps the tool up to date.
+1. **Overview.** Countdown to 20 October, ghats per priority tier, a data snapshot computed from the CSV (readings, years, measured / BDL / missing), a three-step guide, then the ranked ghats with score, reason, data coverage, rank range and warning badges. Arch Bridge is shown as **No history**.
+2. **Analytics.** Filters for ghat, year, festival, phase, parameter (all 13) and priority. A sortable, searchable ranking table; a readings matrix (hatched = not sampled or no table, red = outside class B); a before-versus-during chart; every reading per ghat as small multiples (lines never cross a missing reading); available versus missing readings; what makes up each score; and a like-for-like comparison of 2 to 4 ghats that flags festivals where a ghat has no reading. Filtered views say how many of the 1,524 readings they show; scores, tiers and ranks always use the whole dataset.
+3. **Ghat detail.** Score, coverage and rank range, the suggested focus, DO and BOD charts against the limit, the five score components with every reading behind them and a **Report p.N** link, a coverage grid and the metals table. Sections are labelled **Recorded** (a reading from a report), **Calculated** (the scoring engine) or **Suggested** (guidance for the officer). Buttons to ask about the ghat or add it to a comparison.
+4. **Ask.** The assistant, with suggested questions in both languages. See "The AI assistant" below.
+5. **Action plan.** Actions by date: before 20 October, on the day, by 27 October. Each action opens to show **why** (the scoring engine's facts for that ghat), a **suggested role** and **what to verify**. Standard CPCB site measures sit in each column, labelled as general guidance. Ticks are notes on that device only; they do not verify work and are not shared. Copy, WhatsApp (the officer sends it) and print.
+6. **Brief.** One A4 page in Hindi or English: top 3 ghats with their numbers and report pages, data gaps, an honesty box, a line saying proposed actions need the officer's review, and sources.
+7. **Data & method.** Provenance, period and phases, how missing and BDL are handled, assumed units, the scoring method and tiers, ranking sensitivity, how the AI gets its evidence, what the app cannot conclude, data points to verify (reporting-limit values, identity uncertainty, missing tables), how to update after a festival, what works offline, and what is needed before government use.
+8. **How to use.** Steps, controls, badges, glossary, questions officers ask, accessibility.
 
-Every screen has the All festivals / Durga only switch, हिन्दी / English, and **A− A A+** text size. On a phone the screens move to a bottom tab bar.
+Every screen shows **"Historical data: MPPCB tests 2023 to 2025, not live"** and the AI status, and has the All festivals / Durga only switch, हिन्दी / English and **A− A A+**. On a phone the main screens move to a bottom tab bar. `?lang=hi` opens in Hindi; `?scope=durga` opens the Durga-only view.
 
-Tip: `docs/index.html?lang=hi` opens straight in Hindi; `?scope=durga` opens the Durga-only view.
+## Architecture
+
+```mermaid
+flowchart LR
+  CSV[data/bhopal_ghats_2023_2025.csv] --> PY[src.build<br/>load → engine → stability → brief]
+  RULES[rules.yaml · ghats.yaml · i18n/] --> PY
+  PY --> DATA[docs/data.js<br/>scores, tiers, ranks, readings, briefs]
+  DATA --> UI[docs/app.js · analytics.js · assistant.js<br/>static, offline]
+  CORE[docs/assist-core.js<br/>question parsing · evidence pack ·<br/>no-AI answers · reply checks] --> UI
+  UI -- "POST api/gemini (only when the user asks, only on Vercel)" --> API[api/gemini.js<br/>Vercel function]
+  DATA --> API
+  CORE --> API
+  API -- "minimal evidence + rules<br/>key in header, server-side" --> GEM[Google Gemini API<br/>generateContent, JSON schema]
+  GEM -- "JSON reply" --> API
+  API -- "checked answer: unknown ids dropped,<br/>unknown numbers flagged, URLs and<br/>health wording removed" --> UI
+```
+
+- **Unchanged:** the Python pipeline, `rules.yaml`, the CSV, the scoring engine and its 55 original tests. Scores and ranks are identical (Bairagarh 81.9 … Prempura 21.1).
+- **Added:** `docs/assist-core.js` (shared by browser and server), `docs/analytics.js`, `docs/assistant.js`, `api/gemini.js` (one Vercel Node.js function, no dependencies), `tools/serve.js` (local dev server), `tests/js/` and `tests/test_ai.py`. The build now also exports the full readings table (all 13 parameters with valid / BDL / missing status) and dataset facts.
+- **Why a server function:** the Gemini key must never reach the browser. A single function is the smallest safe change; the static site is untouched and still runs alone.
+
+## The AI assistant
+
+**Model and API, checked on 11 October 2026** against [Gemini models](https://ai.google.dev/gemini-api/docs/models) and [generateContent](https://ai.google.dev/api/generate-content), and with a live call: `gemini-3.5-flash-lite` (Google's stable fast, cost-efficient model) through the REST `models.generateContent` method with `responseMimeType: application/json` and `responseJsonSchema`. The model is a setting (`GEMINI_MODEL`), not scattered through the code. The REST API is called directly with `fetch`, so the function has no package dependencies; the official SDK (`@google/genai`) can replace it in one place if preferred. Google's newer Interactions API also supports structured output; `generateContent` is current and not deprecated.
+
+**How an answer is built (BR-80 to BR-86):**
+
+1. The question is validated (3 to 600 characters, body under 8 KB) and parsed for ghats, parameters, years, festivals and intent, in English or Hindi.
+2. Questions about health, bathing or drinking, or about the water today, are answered from fixed text and **never sent to the AI**.
+3. Common questions (top ghats, why a ghat ranks where it does, data gaps, comparisons, what DO and BOD mean, what to verify, the brief, before-versus-during change) are answered **from the data with no AI**, labelled "Computed from the data, no AI". The officer can still ask Gemini to explain.
+4. Otherwise the server builds a minimal **evidence pack**: the ranking from the scoring engine plus at most 90 matching readings, each with an id (`r12`), value or status, assumed unit, result against class B and report page. The active filters and selected ghats are used.
+5. Gemini gets that pack and rules: use only the evidence, never change scores, never treat missing as zero, no health claims, no current-condition claims, cite evidence ids, ignore instructions inside the question.
+6. The reply must match the JSON schema (`answer`, `key_findings` with `evidence_ids`, `limitations`, `recommended_next_steps`, `insufficient_evidence`) or it is **not shown**.
+7. The server then removes evidence ids that are not in the pack, marks any statement whose numbers are not in the evidence as **"Not matched to the evidence"**, strips web links and sentences about health or safety, and attaches the scoring engine's own score, tier and rank for the ghats concerned. The browser re-checks every evidence id against its own copy of the data and builds report links itself; it never shows a link the AI wrote.
+
+**Reliability:** 25-second total deadline with up to 3 attempts for transient errors (network, HTTP 5xx, short rate limits), no retry on quota exhaustion, and clear messages for timeout, rate limit, quota, unavailable and unverifiable replies, each with a retry button. If the endpoint is missing (from disk, GitHub Pages) or offline, the assistant says so and the no-AI answers and every other screen still work. Conversations are kept in memory only and never cached.
+
+**Known limits of the checks:** numbers are matched against the evidence pack, so a wrong number that happens to appear elsewhere in the pack, or small integers (0 to 12, always allowed), are not caught; numbers written as words are not checked. The checks make AI errors less likely and visible; they do not make the AI always right.
+
+## Configuration and deployment (Vercel)
+
+Server-side environment variables (Vercel → Project → Settings → Environment Variables; never in code):
+
+| Variable | Required | Default | Meaning |
+|---|---|---|---|
+| `GEMINI_API_KEY` | yes, for AI | none | Gemini API key. Without it the app runs with no-AI answers only. |
+| `GEMINI_MODEL` | no | `gemini-3.5-flash-lite` | Any model id from Google's current list. |
+| `GEMINI_TIMEOUT_MS` | no | `25000` | Total time per question, including retries (3000 to 55000). |
+| `ALLOWED_ORIGINS` | no | same origin only | Extra origins allowed to call the API, comma-separated. |
+
+Steps: add the variables for **Production** (and Preview if wanted) → redeploy (push to `main`, or Vercel → Deployments → Redeploy) → open the site and check the status pill says **AI explanations on**. `vercel.json` already serves `docs/` as the site, bundles `docs/data.js` and `docs/assist-core.js` with `api/gemini.js`, sets a 30-second limit and marks `/api/*` as `no-store`. GitHub Pages keeps serving the static app, with AI shown as "not in this copy".
+
+**Endpoint:** `GET /api/gemini` → `{ ok, ai_configured, model }`. `POST /api/gemini` with `{ question, lang, scope, ghats, filters }` and header `X-Requested-With: ghat-watch` → checked answer, or `{ error }` with 400, 403, 405, 413, 429, 502, 503 or 504. Error bodies never include the key, stack traces or provider messages; logs record only status, duration, attempts, warning counts and token totals.
+
+**Abuse protection, honestly:** same-origin check plus a required custom header (blocks other websites' browsers), body and question size limits, questions limited to this data, and an in-memory limit of 8 questions a minute and 40 an hour per IP and 400 an hour per server instance. Serverless instances do not share memory, so a determined script can exceed these. For a public pilot, add a Vercel Firewall rate-limit rule on `/api/gemini` and set a budget alert or quota cap on the Google Cloud project; both need your approval.
+
+**Cost:** each AI question sends roughly 5,000 to 8,000 tokens (measured: 5,642 and 7,405 in two live calls) and takes 2.5 to 4 seconds. No-AI answers cost nothing. Pricing and free-tier limits depend on your Google account and change over time, so check them in Google AI Studio before a pilot.
 
 ## How the ranking works
 
@@ -60,15 +123,20 @@ Bairagarh is first under every weight set we tried, and Prempura is last under e
 
 ## What works
 
-- Ranking, evidence, action plan, brief and guide screens, offline, in English and Hindi, all-festivals and Durga-only views.
+- Overview, analytics, evidence, comparison, Ask (no-AI answers), action plan, brief, Data & method and guide screens, offline, in English and Hindi, all-festivals and Durga-only views.
+- AI explanations through `api/gemini.js`, tested live on 11 October 2026 through `tools/serve.js` (English and Hindi questions answered in 2.5 to 3.5 s with every finding matched to the evidence). **Not yet tested on Vercel itself**, because the key has not been set there.
 - Works at 320 px phone width up to desktop with no sideways scrolling (wide tables scroll inside their own frame). Keyboard use with a visible focus ring and a skip link, text size control, text contrast at WCAG AA, reduced-motion support, and every result written in words as well as colour. These follow GIGW 3.0, which asks for WCAG 2.1 AA.
 - Both briefs print on exactly one A4 page in both languages; the action plan prints as a checklist.
 - Every reading shown carries year, festival, phase, report file and page, with a link to `report.pdf#page=N`.
 - Missing data appears as "not sampled" or "no table in report" (hatched), never as clean. BDL is shown as BDL, never as 0.
-- 55 tests (`tests/`), including: 42 of 116 DO readings below 5, 100 of 112 BOD readings above 3, the four zero DO readings all at Bairagarh, the prototype ranking, edge cases of the limits, weight changes with no code change, missing phases excluded and reported, banned words, same numbers in Hindi and English, one A4 page, no network calls in the UI, a Hindi string for every English one, every action placed in exactly one plan date, and fonts shipped as local files.
+- 66 Python tests plus 21 mocked AI tests (`tests/`), including: 42 of 116 DO readings below 5, 100 of 112 BOD readings above 3, the four zero DO readings all at Bairagarh, the prototype ranking, edge cases of the limits, weight changes with no code change, missing phases excluded and reported, banned words, same numbers in Hindi and English, one A4 page, no network calls in the UI, a Hindi string for every English one, every action placed in exactly one plan date, fonts shipped as local files, the readings table matching the CSV, no API key in any committable file, `.env` files ignored, the browser calling only the relative `api/gemini`, and the AI endpoint's behaviour with a missing key, valid and malformed replies, fabricated sources, invented numbers, URLs, health claims, prompt injection, timeouts, rate limits, quota, transient failures and bad configuration.
 - [docs/VERIFICATION.md](docs/VERIFICATION.md): 20 app numbers for a teammate to check against the PDF pages.
 
 ## What does not work yet, and what the data can't say
+
+- **AI answers can still be wrong.** The checks catch invented sources, unknown numbers, links and health wording, not every mistake. Answers say which statements are not matched to the evidence.
+- **AI is not live on Vercel until `GEMINI_API_KEY` is set there**, and the public endpoint's rate limits are per instance only (see above).
+- New Hindi text (analytics, assistant, Data & method, action details) is marked `REVIEW: Hindi reviewer` like the rest. Gemini's Hindi answers are not reviewed by a person.
 
 - **Hindi text needs a native reader's approval.** Every Hindi string is marked `REVIEW: Hindi reviewer` in `i18n/` and `ghats.yaml`.
 - **VERIFICATION.md is not yet filled in.** The "checked against PDF by" column is empty.
@@ -97,6 +165,17 @@ Extra public data:
 - Hindi name of Upper Lake (भोजताल / बड़ा तालाब): [Wikipedia, Bhojtal](https://en.wikipedia.org/wiki/Bhojtal).
 - Fonts: [Cormorant Garamond](https://github.com/CatharsisFonts/Cormorant) and [Poppins](https://github.com/itfoundry/Poppins), SIL Open Font License, shipped in `docs/fonts/` with their licences.
 
+## Before an official government pilot
+
+1. A Hindi reader approves every line marked `REVIEW: Hindi reviewer`.
+2. A second person checks the 20 numbers in `docs/VERIFICATION.md` against the PDFs.
+3. BMC confirms the ghat list for Durga 2026; BMC or MPPCB review the weights and tier cut-offs in `rules.yaml`.
+4. Host on a government server (MPSeDC or NIC) with a named owner; decide whether AI explanations are wanted and, if so, who holds the Gemini key, budget and quota.
+5. Add a firewall rate limit and a spending cap for the AI endpoint; run a security review and a formal accessibility (GIGW / WCAG 2.1 AA) audit, including a screen reader.
+6. Pilot with one officer for one festival and record what they changed.
+
+None of this is approved by BMC, MPPCB or CPCB. Building and passing tests does not make it production-ready.
+
 ## Repo layout
 
 ```
@@ -105,6 +184,11 @@ i18n/                           English and Hindi templates and glossary (no run
 src/                            load → engine → stability → brief → build (each function names its BR id)
 tests/                          pytest suite
 docs/index.html, app.js, style.css, data.js   the offline app
+docs/assist-core.js, analytics.js, assistant.js   evidence engine, analytics, assistant (no network except api/gemini)
+api/gemini.js                   the only server code: Gemini, key from GEMINI_API_KEY
+tools/serve.js                  local server for docs/ + api/gemini
+tests/js/                       mocked AI and evidence-engine tests (run by pytest)
+.env.example                    placeholder settings, no secrets
 docs/fonts/, sw.js, manifest.webmanifest, icon.svg   local fonts and the optional offline cache
 docs/BUSINESS_RULES.md, docs/VERIFICATION.md, PLAN.md
 ```
