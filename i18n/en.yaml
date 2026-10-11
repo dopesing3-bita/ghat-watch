@@ -393,7 +393,7 @@ assist:
   retry: "Retry"
   thinking: "Checking the evidence…"
   computed: "Computed from the data, no AI"
-  ai_badge: "Explained by Gemini, checked against the evidence"
+  ai_badge: "Explained by AI, checked against the evidence"
   unverified: "Not matched to the evidence"
   findings: "Key findings"
   evidence: "Evidence"

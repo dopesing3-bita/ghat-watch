@@ -394,7 +394,7 @@ assist:                 # every line below needs approval.  REVIEW: Hindi review
   retry: "फिर से"   # REVIEW: Hindi reviewer
   thinking: "प्रमाण जांच रहे हैं…"   # REVIEW: Hindi reviewer
   computed: "डेटा से गणना, बिना AI"   # REVIEW: Hindi reviewer
-  ai_badge: "Gemini की व्याख्या, प्रमाण से जांची गई"   # REVIEW: Hindi reviewer
+  ai_badge: "AI की व्याख्या, प्रमाण से जांची गई"   # REVIEW: Hindi reviewer
   unverified: "प्रमाण से मेल नहीं"   # REVIEW: Hindi reviewer
   findings: "मुख्य बातें"   # REVIEW: Hindi reviewer
   evidence: "प्रमाण"   # REVIEW: Hindi reviewer
