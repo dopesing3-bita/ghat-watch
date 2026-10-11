@@ -55,6 +55,60 @@ ui:
   no_table: रिपोर्ट में तालिका नहीं   # REVIEW: Hindi reviewer
   scope_shift: "दूसरे दृश्य ({other}) में क्रम {n} स्थान बदलता है।"   # REVIEW: Hindi reviewer
   footer: "कोई भाषा मॉडल नहीं, कोई नेटवर्क कॉल नहीं। हर संख्या MPPCB रिपोर्ट के पृष्ठ से जुड़ी है। भार rules.yaml में प्रस्तावित हैं।"   # REVIEW: Hindi reviewer
+  nav_plan: कार्य योजना   # REVIEW: Hindi reviewer
+  nav_help: उपयोग कैसे करें   # REVIEW: Hindi reviewer
+  skip: मुख्य सामग्री पर जाएं   # REVIEW: Hindi reviewer
+  text_size: अक्षर का आकार   # REVIEW: Hindi reviewer
+  size_down: अक्षर छोटे करें   # REVIEW: Hindi reviewer
+  size_reset: सामान्य आकार   # REVIEW: Hindi reviewer
+  size_up: अक्षर बड़े करें   # REVIEW: Hindi reviewer
+  view: दृश्य   # REVIEW: Hindi reviewer
+  countdown_days: "दुर्गा विसर्जन में {n} दिन शेष"   # REVIEW: Hindi reviewer
+  countdown_one: "दुर्गा विसर्जन में 1 दिन शेष"   # REVIEW: Hindi reviewer
+  countdown_today: "दुर्गा विसर्जन आज है"   # REVIEW: Hindi reviewer
+  countdown_past: "दुर्गा विसर्जन {date} को था"   # REVIEW: Hindi reviewer
+  hero_eyebrow: "दुर्गा विसर्जन · {date}"   # REVIEW: Hindi reviewer
+  hero_title: अतिरिक्त सफाई, एरेशन और जांच पहले कहां भेजें   # REVIEW: Hindi reviewer
+  hero_lede: "भोपाल के विसर्जन घाट, 2023, 2024 और 2025 की MPPCB जांच में दर्ज जल-गुणवत्ता जोखिम के क्रम में। हर संख्या अपनी रिपोर्ट के पृष्ठ से जुड़ी है।"   # REVIEW: Hindi reviewer
+  stat_days: शेष दिन   # REVIEW: Hindi reviewer
+  stat_range: क्रम का दायरा   # REVIEW: Hindi reviewer
+  stat_range_runs: "{runs} भार-सेट में"   # REVIEW: Hindi reviewer
+  stat_ghats: "{n} घाट"   # REVIEW: Hindi reviewer
+  stat_ghat: "1 घाट"   # REVIEW: Hindi reviewer
+  howto_title: तीन चरणों में उपयोग करें   # REVIEW: Hindi reviewer
+  howto_1: क्रम सूची पढ़ें। सबसे अधिक दर्ज जोखिम वाला घाट सबसे ऊपर है।   # REVIEW: Hindi reviewer
+  howto_2: किसी घाट को खोलें और उसके अंकों के पीछे की हर रीडिंग रिपोर्ट पृष्ठ के साथ देखें।   # REVIEW: Hindi reviewer
+  howto_3: एक पृष्ठ का संक्षिप्त नोट भेजें, या टीम के साथ कार्य योजना पर निशान लगाएं।   # REVIEW: Hindi reviewer
+  howto_hide: सुझाव छिपाएं   # REVIEW: Hindi reviewer
+  howto_more: पूरी मार्गदर्शिका   # REVIEW: Hindi reviewer
+  ranked_list: क्रम में घाट   # REVIEW: Hindi reviewer
+  chart_title: रीडिंग एक नज़र में   # REVIEW: Hindi reviewer
+  chart_do: "घुलित ऑक्सीजन, mg/l (इकाई मानी गई)। क्लास B में कम से कम {lim} चाहिए।"   # REVIEW: Hindi reviewer
+  chart_bod: "BOD, mg/l (इकाई मानी गई)। क्लास B में अधिकतम {lim} की अनुमति है।"   # REVIEW: Hindi reviewer
+  chart_summary: "{param}: {expected} रीडिंग अपेक्षित, {valid} मापी गईं, {missing} उपलब्ध नहीं, {fail} क्लास B सीमा से बाहर।"   # REVIEW: Hindi reviewer
+  legend_fail: क्लास B सीमा से बाहर   # REVIEW: Hindi reviewer
+  legend_pass: क्लास B सीमा के भीतर   # REVIEW: Hindi reviewer
+  legend_bdl: BDL
+  legend_missing: नमूना नहीं या तालिका नहीं   # REVIEW: Hindi reviewer
+  legend_limit: क्लास B सीमा   # REVIEW: Hindi reviewer
+  plan_title: दुर्गा विसर्जन की कार्य योजना   # REVIEW: Hindi reviewer
+  plan_lede: "रीडिंग से सुझाए गए काम, उनके समय के अनुसार। निर्णय अधिकारी का है। निशान केवल इसी उपकरण पर सहेजे जाते हैं।"   # REVIEW: Hindi reviewer
+  plan_before: "{date} से पहले"   # REVIEW: Hindi reviewer
+  plan_during: "{date} को, विसर्जन के दौरान"   # REVIEW: Hindi reviewer
+  plan_after: "{date} तक, एक सप्ताह बाद"   # REVIEW: Hindi reviewer
+  plan_progress: "{total} में से {done} काम पूरे"   # REVIEW: Hindi reviewer
+  plan_reset: निशान हटाएं   # REVIEW: Hindi reviewer
+  plan_none: इस समूह में कोई काम नहीं।   # REVIEW: Hindi reviewer
+  plan_text_title: "घाट वॉच कार्य योजना: दुर्गा विसर्जन, {date}"   # REVIEW: Hindi reviewer
+  footer_screens: पृष्ठ   # REVIEW: Hindi reviewer
+  footer_sources: स्रोत रिपोर्ट   # REVIEW: Hindi reviewer
+  footer_about: इस उपकरण के बारे में   # REVIEW: Hindi reviewer
+  footer_about_text: "घाट वॉच भोपाल के विसर्जन घाटों को MPPCB की तीन वर्ष की रिपोर्टों में दर्ज जल-गुणवत्ता जोखिम के क्रम में रखता है, और साफ बताता है कि डेटा कहां उपलब्ध नहीं है।"   # REVIEW: Hindi reviewer
+  footer_code: सोर्स कोड (MIT लाइसेंस)   # REVIEW: Hindi reviewer
+  footer_offered: ओपन सोर्स, MPSeDC के माध्यम से मध्य प्रदेश शासन को प्रस्तुत।   # REVIEW: Hindi reviewer
+  report_year: "MPPCB रिपोर्ट {year}"   # REVIEW: Hindi reviewer
+  cpcb_criteria: CPCB जल-गुणवत्ता मानदंड   # REVIEW: Hindi reviewer
+  updated: "डेटा तैयार: {date}"   # REVIEW: Hindi reviewer
 flag:
   identity_uncertain: पहचान अनिश्चित, दो अलग जगह हो सकती हैं   # REVIEW: Hindi reviewer
   limited_data: सीमित डेटा   # REVIEW: Hindi reviewer
@@ -102,3 +156,132 @@ brief:
   honesty_health: "यह केवल रीडिंग की CPCB क्लास B सीमा से तुलना है। इसमें स्वास्थ्य के बारे में कोई दावा नहीं है।"   # REVIEW: Hindi reviewer
   sources: स्रोत   # REVIEW: Hindi reviewer
   sep: "; "
+help:                       # BR-63 उपयोग मार्गदर्शिका। Every line needs approval.  REVIEW: Hindi reviewer
+  title: घाट वॉच का उपयोग कैसे करें   # REVIEW: Hindi reviewer
+  lede: "घाट वॉच भोपाल के विसर्जन घाटों पर MPPCB की तीन वर्ष की जल जांच को एक क्रम सूची में रखता है, ताकि आप {event} को दुर्गा विसर्जन से पहले तय कर सकें कि अतिरिक्त सफाई, एरेशन और जांच कहां भेजनी है।"   # REVIEW: Hindi reviewer
+  sections:
+    - id: steps
+      h: चार चरण   # REVIEW: Hindi reviewer
+      items:
+        - t: 1. क्रम सूची पढ़ें   # REVIEW: Hindi reviewer
+          d: "सबसे अधिक दर्ज जोखिम वाला घाट सबसे ऊपर है। हर पंक्ति में सरल शब्दों में कारण, डेटा कितना है, और क्रम कितना स्थिर है, यह दिया है।"   # REVIEW: Hindi reviewer
+        - t: 2. प्रमाण देखें   # REVIEW: Hindi reviewer
+          d: "किसी घाट पर टैप करें और उसके अंकों के पीछे की हर रीडिंग देखें। हर रीडिंग के साथ 'रिपोर्ट पृ.' लिंक है जो आधिकारिक MPPCB रिपोर्ट का वही पृष्ठ खोलता है।"   # REVIEW: Hindi reviewer
+        - t: 3. काम की योजना बनाएं   # REVIEW: Hindi reviewer
+          d: "कार्य योजना सुझाए गए कामों को तारीख के अनुसार रखती है: विसर्जन से पहले, विसर्जन के दिन, और एक सप्ताह बाद। टीम का काम पूरा होने पर निशान लगाएं। निशान इसी उपकरण पर रहते हैं।"   # REVIEW: Hindi reviewer
+        - t: 4. संक्षिप्त नोट भेजें   # REVIEW: Hindi reviewer
+          d: "संक्षिप्त नोट हिन्दी या अंग्रेज़ी में एक A4 पृष्ठ है। इसे कॉपी करें, WhatsApp पर भेजें, या प्रिंट करें या PDF सहेजें।"   # REVIEW: Hindi reviewer
+    - id: controls
+      h: नियंत्रण   # REVIEW: Hindi reviewer
+      items:
+        - t: सभी त्योहार या केवल दुर्गा   # REVIEW: Hindi reviewer
+          d: "'सभी त्योहार' 2023 से 2025 तक की गणेश और दुर्गा की हर जांच लेता है, जिससे प्रमाण अधिक है। 'केवल दुर्गा' सिर्फ दुर्गा की जांच लेता है। अगर दोनों दृश्यों में किसी घाट का क्रम 2 या अधिक स्थान बदलता है तो बैज दिखता है।"   # REVIEW: Hindi reviewer
+        - t: हिन्दी / English
+          d: "हर पृष्ठ और संक्षिप्त नोट की भाषा बदलता है। लिंक के अंत में ?lang=hi जोड़ने से उपकरण सीधे हिन्दी में खुलता है।"   # REVIEW: Hindi reviewer
+        - t: A− A A+
+          d: "अक्षर छोटे या बड़े करता है। आपकी पसंद इसी उपकरण पर याद रहती है।"   # REVIEW: Hindi reviewer
+    - id: score
+      h: अंक कैसे बनते हैं   # REVIEW: Hindi reviewer
+      p: "रीडिंग की तुलना संगठित बाहरी स्नान के लिए CPCB क्लास B सीमा से की जाती है: घुलित ऑक्सीजन कम से कम {do_min} mg/l, BOD अधिकतम {bod_max} mg/l, pH 6.5 से 8.5। 100 में से अंक पांच भागों को जोड़कर बनते हैं।"   # REVIEW: Hindi reviewer
+      items:
+        - t: "ऑक्सीजन की कमी, अधिकतम {oxygen} अंक"   # REVIEW: Hindi reviewer
+          d: "{do_min} mg/l से कम DO वाली रीडिंग का हिस्सा, और DO 2 से नीचे जाने या 0 दर्ज होने पर अतिरिक्त अंक।"   # REVIEW: Hindi reviewer
+        - t: "जैविक प्रदूषण भार, अधिकतम {organic} अंक"   # REVIEW: Hindi reviewer
+          d: "{bod_max} mg/l से अधिक BOD वाली रीडिंग का हिस्सा, और विसर्जन के दौरान BOD सीमा के तीन गुना तक पहुंचने पर अतिरिक्त अंक।"   # REVIEW: Hindi reviewer
+        - t: "पीएच, अधिकतम {ph} अंक"   # REVIEW: Hindi reviewer
+          d: "6.5 से 8.5 के बाहर pH वाली रीडिंग का हिस्सा।"   # REVIEW: Hindi reviewer
+        - t: "विसर्जन का असर, अधिकतम {impact} अंक"   # REVIEW: Hindi reviewer
+          d: "कितनी बार विसर्जन के दौरान पानी पहले से खराब था। केवल वे जोड़ियां गिनी जाती हैं जिनमें दोनों रीडिंग हैं।"   # REVIEW: Hindi reviewer
+        - t: "सुधार, अधिकतम {recovery} अंक"   # REVIEW: Hindi reviewer
+          d: "कितनी बार एक सप्ताह बाद भी पानी विसर्जन से पहले की तुलना में खराब था।"   # REVIEW: Hindi reviewer
+        - t: प्राथमिकता स्तर   # REVIEW: Hindi reviewer
+          d: "{p1} या अधिक पर प्राथमिकता 1, {p2} से प्राथमिकता 2, {p2} से कम पर प्राथमिकता 3। कोई हरा स्तर नहीं है: BOD {bod_valid} में से {bod_above} रीडिंग में सीमा से अधिक था, इसलिए यह क्रम तुलनात्मक है।"   # REVIEW: Hindi reviewer
+        - t: क्रम का दायरा   # REVIEW: Hindi reviewer
+          d: "क्रम {runs} यादृच्छिक भार-सेट में दोबारा निकाला जाता है। छोटा दायरा मतलब भार कुछ भी हों, क्रम वही रहता है। बड़ा दायरा मतलब आसपास के घाट करीब हैं।"   # REVIEW: Hindi reviewer
+    - id: badges
+      h: बैज का अर्थ   # REVIEW: Hindi reviewer
+      items:
+        - t: सीमित डेटा   # REVIEW: Hindi reviewer
+          d: "अपेक्षित DO और BOD रीडिंग में से {limited} से कम उपलब्ध हैं। क्रम रखा गया है, पर वह कम प्रमाण पर टिका है।"   # REVIEW: Hindi reviewer
+        - t: पहचान अनिश्चित   # REVIEW: Hindi reviewer
+          d: "गणेश की तालिकाओं में कमला पार्क कुंड और दुर्गा की तालिकाओं में लोअर लेक घाट लिखा है। ये दो अलग जगह हो सकती हैं।"   # REVIEW: Hindi reviewer
+        - t: धातुओं में उछाल   # REVIEW: Hindi reviewer
+          d: "विसर्जन के दौरान किसी धातु की रीडिंग पहले की रीडिंग से कम से कम 5 गुना थी, या BDL से संख्या में बदली। धातुओं की क्लास B सीमा नहीं है और उनसे अंक नहीं मिलते। डेटा से कारण स्थापित नहीं होता।"   # REVIEW: Hindi reviewer
+        - t: संभवतः रिपोर्टिंग-सीमा मान   # REVIEW: Hindi reviewer
+          d: "एक त्योहार के हर घाट और हर चरण में धातु का एक ही मान है, जो प्रयोगशाला की रिपोर्टिंग सीमा जैसा लगता है। इसे उछाल की जांच से बाहर रखा गया है।"   # REVIEW: Hindi reviewer
+        - t: केवल-दुर्गा दृश्य में क्रम अलग   # REVIEW: Hindi reviewer
+          d: "केवल दुर्गा की जांच लेने पर घाट 2 या अधिक स्थान ऊपर-नीचे होता है।"   # REVIEW: Hindi reviewer
+        - t: कोई पुराना डेटा नहीं   # REVIEW: Hindi reviewer
+          d: "2023 से 2025 की रिपोर्टों में इस घाट की कोई रीडिंग नहीं है। कार्य योजना में {event} से पहले आधार जांच दी गई है।"   # REVIEW: Hindi reviewer
+    - id: glossary
+      h: शब्दावली   # REVIEW: Hindi reviewer
+      items:
+        - t: घुलित ऑक्सीजन (DO)   # REVIEW: Hindi reviewer
+          d: "पानी में घुली ऑक्सीजन। मछलियों और अन्य जलीय जीवों को इसकी जरूरत होती है। क्लास B में कम से कम {do_min} mg/l चाहिए।"   # REVIEW: Hindi reviewer
+        - t: बीओडी (BOD)   # REVIEW: Hindi reviewer
+          d: "जैव-रासायनिक ऑक्सीजन मांग: जैविक कचरा सड़ते समय कितनी ऑक्सीजन खर्च करता है। क्लास B में अधिकतम {bod_max} mg/l की अनुमति है।"   # REVIEW: Hindi reviewer
+        - t: पीएच (pH)   # REVIEW: Hindi reviewer
+          d: "पानी कितना अम्लीय या क्षारीय है। 7 उदासीन है। क्लास B की सीमा 6.5 से 8.5 है।"   # REVIEW: Hindi reviewer
+        - t: BDL
+          d: "पहचान सीमा से नीचे: बहुत कम, पर शून्य नहीं और अनुपलब्ध भी नहीं। इसे BDL ही दिखाया जाता है, कभी 0 नहीं।"   # REVIEW: Hindi reviewer
+        - t: नमूना नहीं लिया गया   # REVIEW: Hindi reviewer
+          d: "रिपोर्ट में उस जांच के लिए खाली, _, * या ** है। इसे अनुपलब्ध माना जाता है, कभी साफ नहीं, और धारीदार दिखाया जाता है।"   # REVIEW: Hindi reviewer
+        - t: रिपोर्ट में तालिका नहीं   # REVIEW: Hindi reviewer
+          d: "रिपोर्ट में उस घाट और त्योहार की कोई तालिका ही नहीं है, जैसे दुर्गा 2025 में बैरागढ़ और मालीखेड़ी।"   # REVIEW: Hindi reviewer
+        - t: CPCB क्लास B   # REVIEW: Hindi reviewer
+          d: "केंद्रीय प्रदूषण नियंत्रण बोर्ड का संगठित बाहरी स्नान के लिए जल-गुणवत्ता वर्ग। घाट पर लोगों के पानी में उतरने के सबसे निकट यही सूचीबद्ध उपयोग है।"   # REVIEW: Hindi reviewer
+        - t: डेटा उपलब्धता   # REVIEW: Hindi reviewer
+          d: "तीन वर्ष, दो त्योहार और तीन चरणों में अपेक्षित DO और BOD रीडिंग में से कितनी मान्य रीडिंग उपलब्ध हैं।"   # REVIEW: Hindi reviewer
+        - t: इकाइयां   # REVIEW: Hindi reviewer
+          d: "रिपोर्टों में इकाइयां छपी नहीं हैं। हर जांच की मानक इकाई मानी गई है और 'इकाई मानी गई' लिखा गया है।"   # REVIEW: Hindi reviewer
+    - id: faq
+      h: अधिकारियों के प्रश्न   # REVIEW: Hindi reviewer
+      items:
+        - t: कोई घाट हरे रंग में क्यों नहीं दिखाया गया?   # REVIEW: Hindi reviewer
+          d: "सभी घाटों में BOD {bod_valid} में से {bod_above} रीडिंग में क्लास B सीमा से अधिक था। कोई घाट पूरे समय सीमा के भीतर नहीं रहा, इसलिए उपकरण प्राथमिकता दिखाता है, पास-फेल नहीं।"   # REVIEW: Hindi reviewer
+        - t: क्या क्रम 2 से 6 पर भरोसा किया जा सकता है?   # REVIEW: Hindi reviewer
+          d: "पास-पास के क्रम को एक समूह मानें। हर पंक्ति में क्रम का दायरा देखें: जहां दायरे मिलते हैं, वहां उन घाटों का आपसी क्रम भार पर निर्भर है।"   # REVIEW: Hindi reviewer
+        - t: क्या यह कहता है कि पानी लोगों को नुकसान करता है?   # REVIEW: Hindi reviewer
+          d: "नहीं। यह केवल रीडिंग की CPCB क्लास B सीमा से तुलना करता है। टोटल कोलीफॉर्म, क्लास B की बैक्टीरिया जांच, इन रिपोर्टों में नहीं है।"   # REVIEW: Hindi reviewer
+        - t: क्या कुछ इंटरनेट पर भेजा जाता है?   # REVIEW: Hindi reviewer
+          d: "नहीं। कोई खाता नहीं, कोई ट्रैकिंग नहीं, कोई नेटवर्क कॉल नहीं। रिपोर्ट पृष्ठ और WhatsApp तभी खुलते हैं जब आप उनके लिंक पर क्लिक करें।"   # REVIEW: Hindi reviewer
+        - t: अगर किसी घाट का डेटा न हो तो?   # REVIEW: Hindi reviewer
+          d: "बिना रीडिंग वाला निर्धारित घाट क्रम सूची में सबसे नीचे 'कोई पुराना डेटा नहीं' के रूप में दिखता है, और कार्य योजना में आधार जांच दी जाती है।"   # REVIEW: Hindi reviewer
+    - id: admin
+      h: विभाग के लिए   # REVIEW: Hindi reviewer
+      items:
+        - t: भार या सीमा बदलें   # REVIEW: Hindi reviewer
+          d: "rules.yaml बदलें, फिर .venv/bin/python -m src.build चलाएं। कोड में कोई संख्या लिखी नहीं है।"   # REVIEW: Hindi reviewer
+        - t: घाट जोड़ें या बदलें   # REVIEW: Hindi reviewer
+          d: "ghats.yaml बदलें, जैसे किसी घाट को 2026 के लिए निर्धारित दर्ज करना, फिर दोबारा बनाएं।"   # REVIEW: Hindi reviewer
+        - t: अगले वर्ष की रीडिंग जोड़ें   # REVIEW: Hindi reviewer
+          d: "भोपाल CSV में उन्हीं कॉलम में पंक्तियां जोड़ें, rules.yaml में वर्ष और src/sources.py में रिपोर्ट फाइल जोड़ें, फिर दोबारा बनाएं और टेस्ट चलाएं।"   # REVIEW: Hindi reviewer
+        - t: इसे होस्ट करें   # REVIEW: Hindi reviewer
+          d: "docs फ़ोल्डर को किसी भी वेब सर्वर पर कॉपी करें, जैसे MPSeDC सर्वर या GitHub Pages। यह सीधे डिस्क से भी खुलता है।"   # REVIEW: Hindi reviewer
+        - t: संख्याएं जांचें   # REVIEW: Hindi reviewer
+          d: "docs/VERIFICATION.md में 20 रीडिंग उनके रिपोर्ट पृष्ठ के साथ दी हैं, ताकि कोई दूसरा व्यक्ति PDF से मिलान कर सके।"   # REVIEW: Hindi reviewer
+    - id: access
+      h: सुगम्यता   # REVIEW: Hindi reviewer
+      items:
+        - t: कीबोर्ड   # REVIEW: Hindi reviewer
+          d: "हर नियंत्रण Tab और Enter से चलता है। साफ रेखा दिखाती है कि आप कहां हैं। 'मुख्य सामग्री पर जाएं' पहला पड़ाव है।"   # REVIEW: Hindi reviewer
+        - t: अक्षर का आकार और ज़ूम   # REVIEW: Hindi reviewer
+          d: "A− A A+ का उपयोग करें, या ब्राउज़र को 200 प्रतिशत तक ज़ूम करें। कुछ भी कटता नहीं।"   # REVIEW: Hindi reviewer
+        - t: केवल रंग पर निर्भर नहीं   # REVIEW: Hindi reviewer
+          d: "हर परिणाम शब्दों में भी लिखा है: सीमा से बाहर, सीमा के भीतर, BDL या नमूना नहीं लिया गया। अनुपलब्ध रीडिंग धारीदार दिखती हैं।"   # REVIEW: Hindi reviewer
+        - t: स्क्रीन रीडर   # REVIEW: Hindi reviewer
+          d: "पृष्ठों में शीर्षक, कॉलम शीर्षक वाली तालिकाएं और नामित चार्ट हैं। हर चार्ट के नीचे की तालिकाओं में वही संख्याएं हैं।"   # REVIEW: Hindi reviewer
+        - t: कम हलचल   # REVIEW: Hindi reviewer
+          d: "अगर आपका उपकरण कम हलचल चाहता है, तो पृष्ठ पर कुछ भी नहीं हिलता।"   # REVIEW: Hindi reviewer
+site:                       # BR-64 हर स्थल के सामान्य उपाय, CPCB दिशानिर्देश से। Every line needs approval.  REVIEW: Hindi reviewer
+  title: हर घाट पर मानक उपाय   # REVIEW: Hindi reviewer
+  tag: CPCB 2010
+  note: "मानक उपाय CPCB के मूर्ति विसर्जन के सामान्य दिशानिर्देश (2010) से लिए गए हैं। ये हर स्थल पर लागू होते हैं और रीडिंग से नहीं निकले हैं।"   # REVIEW: Hindi reviewer
+  before:
+    - विसर्जन स्थलों पर बैरिकेडिंग करें और उन्हें चिह्नित करें।   # REVIEW: Hindi reviewer
+    - फूल, कपड़े और सजावट के लिए अलग संग्रह की व्यवस्था करें, जैव-अपघटनीय और अजैव-अपघटनीय अलग-अलग।   # REVIEW: Hindi reviewer
+  during:
+    - मूर्ति को पानी में डालने से पहले फूल, कपड़े और सजावट उतार लें।   # REVIEW: Hindi reviewer
+    - एकत्र की गई सामग्री को न जलाएं।   # REVIEW: Hindi reviewer
+  after:
+    - बची हुई मूर्ति सामग्री और मलबा विसर्जन के 48 घंटे के भीतर हटाएं।   # REVIEW: Hindi reviewer

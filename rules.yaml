@@ -67,3 +67,12 @@ focus:                      # BR-60 thresholds on component points
 
 summary:                    # BR-31 headline, computed from data, shown on every screen
   headline_parameter: BOD
+
+event:                      # BR-62 countdown and plan dates, computed in the browser from these
+  date: "2026-10-20"        # Durga visarjan 2026 (Drik Panchang)
+  after_days: 7             # the "one week after" re-test
+
+plan:                       # BR-61 when each suggested action (BR-60) happens. The officer decides.
+  before: [baseline_test, do_check, cleaning, fill_gap]
+  during: [test_during, metals]
+  after: [retest_after]

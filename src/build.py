@@ -8,7 +8,7 @@ from .config import ROOT, load_ghats, load_rules
 from .engine import evaluate
 from .i18n import LANGS, load_i18n, reason_text, stability_text
 from .load import load_readings
-from .sources import BASE_URL, REPORTS
+from .sources import BASE_URL, CRITERIA_URL, REPO_URL, REPORTS
 from .stability import rank_ranges
 
 
@@ -36,11 +36,26 @@ def build(rules=None, ghats=None, date=None):
         "scopes": result["scopes"],
         "top_stable": top_stable,
         "briefs": build_briefs(result, ranges, rules, i18n, date),
-        "i18n": {lang: {k: i18n[lang][k] for k in ("ui", "flag", "focus")} for lang in LANGS},
+        "i18n": {lang: {k: i18n[lang][k] for k in ("ui", "flag", "focus", "help", "site")} for lang in LANGS},
         "glossary": i18n["glossary"],
         "reports": {str(y): f"{BASE_URL}{f}" for y, f in REPORTS.items()},
+        "criteria_url": CRITERIA_URL,
+        "repo_url": REPO_URL,
         "stability_runs": rules["stability"]["runs"],
+        "tiers": rules["tiers"],
+        "limited_below": rules["confidence"]["limited_below"],
+        "event": rules["event"],
+        "plan": plan_groups(rules),
     }
+
+
+def plan_groups(rules):
+    """BR-61: before / during / after groups of suggested actions. Every BR-60 action sits in exactly one."""
+    groups = {k: list(rules["plan"][k]) for k in ("before", "during", "after")}
+    keys = [a for g in groups.values() for a in g]
+    if len(keys) != len(set(keys)):
+        raise ValueError("rules.yaml plan: an action is listed in more than one group")
+    return groups
 
 
 def write_data_js(data, path=None):

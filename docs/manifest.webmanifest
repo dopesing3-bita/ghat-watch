@@ -1,0 +1,12 @@
+{
+  "name": "Ghat Watch: Bhopal visarjan ghats",
+  "short_name": "Ghat Watch",
+  "description": "Bhopal immersion ghats ranked by recorded water-quality risk, with a Hindi and English brief.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F7F3EF",
+  "theme_color": "#175A67",
+  "lang": "en-IN",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

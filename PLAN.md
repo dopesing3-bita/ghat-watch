@@ -17,9 +17,11 @@
 CSV → load (status) → engine per scope (all, durga) → stability → brief (en, hi) → `docs/data.js` as `window.GHAT_DATA`.
 
 ## Screens
-1. Ranking: tier, score, reason, badges, rank range, scope and language toggles, BR-31 line.
-2. Ghat detail: component bars, evidence tables with Report p.N links, coverage grid (missing hatched), metals.
-3. Brief: one A4 page, copy, WhatsApp link, print.
+1. Ranking: countdown, tier counts, three-step guide, then tier, score, reason, badges, rank range, scope and language toggles, BR-31 line.
+2. Ghat detail: score/coverage/rank-range tiles, DO and BOD charts against the limit, component bars, evidence tables with Report p.N links, coverage grid (missing hatched), metals.
+3. Action plan (BR-61, BR-64): actions by date, tickable on the device, copy/WhatsApp/print.
+4. Brief: one A4 page, copy, WhatsApp link, print.
+5. How to use (BR-63): steps, controls, scoring, badges, glossary, FAQ, accessibility, upkeep.
 
 ## Tests by BR id
 BR-01/02 status and counts. BR-10 limits at the edges. BR-20..24 Bairagarh ≈ 81.9, Prempura ≈ 21.1 last. BR-23 exclusion reported. BR-26 2025 Cr/Pb flagged. BR-30 tiers. BR-32 confidence and No history. BR-33 deterministic seed. BR-40 Durga scope. BR-13 banned words. BR-70..72 one page, same numbers EN and HI, numbers traceable to evidence.

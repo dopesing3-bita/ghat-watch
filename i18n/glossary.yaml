@@ -36,3 +36,10 @@ component:
   ph: {en: pH, hi: पीएच (pH)}   # REVIEW: Hindi reviewer
   impact: {en: Immersion impact, hi: विसर्जन का असर}   # REVIEW: Hindi reviewer
   recovery: {en: Recovery after one week, hi: एक सप्ताह बाद सुधार}   # REVIEW: Hindi reviewer
+water_body:
+  Upper Lake: {en: Upper Lake, hi: बड़ा तालाब (भोजताल)}   # REVIEW: Hindi reviewer
+  Lower Lake: {en: Lower Lake, hi: छोटा तालाब (लोअर लेक)}   # REVIEW: Hindi reviewer
+  Hathaikheda dam: {en: Hathaikheda dam, hi: हथाईखेड़ा डैम}   # REVIEW: Hindi reviewer
+  Shahpura Lake: {en: Shahpura Lake, hi: शाहपुरा झील}   # REVIEW: Hindi reviewer
+  Kund: {en: Kund, hi: कुंड}   # REVIEW: Hindi reviewer
+  not in the reports: {en: not in the reports, hi: रिपोर्टों में नहीं}   # REVIEW: Hindi reviewer

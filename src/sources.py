@@ -1,5 +1,7 @@
 """BR-04: map year to the MPPCB report file and build page links."""
 BASE_URL = "https://www.mppcb.mp.gov.in/proc/mon/"
+CRITERIA_URL = "https://cpcb.gov.in/water-quality-criteria/"
+REPO_URL = "https://github.com/dopesing3-bita/ghat-watch"
 
 REPORTS = {
     2023: "Idol_immer._Report_23_CPCB.pdf",

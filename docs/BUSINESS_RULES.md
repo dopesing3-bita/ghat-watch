@@ -49,8 +49,13 @@ Weights and thresholds are proposed policy choices, not science. They live in `r
 
 | ID | Rule |
 |---|---|
-| BR-50 | `ghats.yaml` lists each ghat, whether it is in the data, whether it is designated for 2026, and the source. From a Free Press Journal report: Prempura, Khatlapura, Hathaikheda Dam, Arch Bridge, Bairagarh and Malikhedi are designated. Shahpura and Rani Kamlapati are "unknown, confirm with BMC". The officer can edit the file. |
+| BR-50 | `ghats.yaml` lists each ghat, whether it is in the data, whether it is designated for 2026, and the source. Free Press Journal, 26 Feb and 22 Sep 2026: Prempura, Khatlapura, Hathaikheda Dam, Arch Bridge, Bairagarh and Malikhedi are the immersion sites. Shahpura and Rani Kamlapati are "unknown, confirm with BMC". New ghats under construction (Barkatullah University campus, Sanjeev Nagar, Neelbadh) have no readings; add them with `in_data: false` if they open. The officer can edit the file. |
 | BR-60 | Suggested focus (the officer decides). Oxygen component of 20 or more: "DO check before immersion and aeration planning". Organic component of 15 or more: "extra cleaning". Immersion impact of 10 or more: "test during immersion, not only before". Recovery of 5 or more: "re-test one week after". Metals spike: "include metals in testing". Any missing phase: "fill the sampling gap". |
+
+| BR-61 | Action plan. Each BR-60 action belongs to exactly one date group in `rules.yaml` (`plan`): before visarjan, during visarjan, or by one week after. The build fails if an action is in two groups. Ticks are kept in the browser only. |
+| BR-62 | Dates. The visarjan date and the re-test gap live in `rules.yaml` (`event`). The countdown is computed in the browser from the device clock. |
+| BR-63 | How to use. The guide is fixed text in `i18n/` (no runtime AI). Its numbers (limits, maximum points, tier cut-offs, runs, the BR-31 counts) are filled from `rules.yaml` and the data, never typed in. |
+| BR-64 | Standard site measures. The action plan also lists general measures from the CPCB idol-immersion guidelines (2010) for every site. They are labelled as guidance, are not derived from the readings, and carry no points. |
 
 ## The brief
 

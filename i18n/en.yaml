@@ -54,6 +54,60 @@ ui:
   no_table: no table in report
   scope_shift: "Rank moves by {n} places in the other view ({other})."
   footer: "No language model, no network calls. Every number links to the MPPCB report page. Weights are proposals in rules.yaml."
+  nav_plan: Action plan
+  nav_help: How to use
+  skip: Skip to main content
+  text_size: Text size
+  size_down: Smaller text
+  size_reset: Default text size
+  size_up: Larger text
+  view: View
+  countdown_days: "{n} days to Durga visarjan"
+  countdown_one: "1 day to Durga visarjan"
+  countdown_today: "Durga visarjan is today"
+  countdown_past: "Durga visarjan was on {date}"
+  hero_eyebrow: "Durga visarjan · {date}"
+  hero_title: Where to send extra cleaning, aeration and testing first
+  hero_lede: "Bhopal's immersion ghats, ranked by the water-quality risk recorded in MPPCB tests in 2023, 2024 and 2025. Every number links to its report page."
+  stat_days: Days to go
+  stat_range: Rank range
+  stat_range_runs: "in {runs} weight sets"
+  stat_ghats: "{n} ghats"
+  stat_ghat: "1 ghat"
+  howto_title: How to use, in three steps
+  howto_1: Read the ranking. The ghat with the highest recorded risk is first.
+  howto_2: Open a ghat to see every reading behind its score, with the report page.
+  howto_3: Share the one-page brief, or tick off the action plan with your team.
+  howto_hide: Hide tips
+  howto_more: Full guide
+  ranked_list: Ranked ghats
+  chart_title: Readings at a glance
+  chart_do: "Dissolved oxygen, mg/l (unit assumed). Class B needs at least {lim}."
+  chart_bod: "BOD, mg/l (unit assumed). Class B allows at most {lim}."
+  chart_summary: "{param}: {expected} readings expected, {valid} measured, {missing} missing, {fail} outside the class B limit."
+  legend_fail: Outside class B limit
+  legend_pass: Within class B limit
+  legend_bdl: BDL
+  legend_missing: Not sampled or no table
+  legend_limit: Class B limit
+  plan_title: Action plan for Durga visarjan
+  plan_lede: "Suggested actions from the readings, grouped by when they happen. The officer decides. Ticks are saved on this device only."
+  plan_before: "Before {date}"
+  plan_during: "On {date}, during immersion"
+  plan_after: "By {date}, one week after"
+  plan_progress: "{done} of {total} actions ticked"
+  plan_reset: Clear ticks
+  plan_none: No actions in this group.
+  plan_text_title: "Ghat Watch action plan: Durga visarjan, {date}"
+  footer_screens: Screens
+  footer_sources: Source reports
+  footer_about: About this tool
+  footer_about_text: "Ghat Watch ranks Bhopal's immersion ghats by the water-quality risk recorded in three years of MPPCB reports, and says plainly where the data is missing."
+  footer_code: Source code (MIT licence)
+  footer_offered: Open source, offered to the Government of Madhya Pradesh through MPSeDC.
+  report_year: "MPPCB report {year}"
+  cpcb_criteria: CPCB water-quality criteria
+  updated: "Data built {date}"
 flag:
   identity_uncertain: Identity uncertain, may be two places
   limited_data: Limited data
@@ -101,3 +155,132 @@ brief:
   honesty_health: "This compares readings with CPCB class B limits. It makes no health claim."
   sources: Sources
   sep: "; "
+help:                       # BR-63 How to use screen. Placeholders are filled from rules.yaml and the data.
+  title: How to use Ghat Watch
+  lede: "Ghat Watch puts three years of MPPCB water tests at Bhopal's immersion ghats into one ranked list, so you can decide where to send extra cleaning, aeration and testing before Durga visarjan on {event}."
+  sections:
+    - id: steps
+      h: Four steps
+      items:
+        - t: 1. Read the ranking
+          d: "The ghat with the highest recorded risk is at the top. Each row gives the reason in plain words, how much data there is and how stable the rank is."
+        - t: 2. Open the evidence
+          d: "Tap a ghat to see every reading behind its score. Each reading has a Report p. link that opens that page of the official MPPCB report."
+        - t: 3. Plan the work
+          d: "Action plan groups the suggested actions by date: before immersion, on the day and one week after. Tick them off as your teams finish. Ticks stay on this device."
+        - t: 4. Share the brief
+          d: "Brief is one A4 page in Hindi or English. Copy it, send it on WhatsApp, or print it or save it as PDF."
+    - id: controls
+      h: Controls
+      items:
+        - t: All festivals or Durga only
+          d: "All festivals uses every Ganesh and Durga test from 2023 to 2025, which is more evidence. Durga only uses the Durga tests alone. A badge shows when a ghat's rank differs by 2 or more places between the two views."
+        - t: हिन्दी / English
+          d: "Switches every screen and the brief. Add ?lang=hi to the link to open the tool in Hindi."
+        - t: A− A A+
+          d: "Makes the text smaller or larger. The choice is remembered on this device."
+    - id: score
+      h: How the score is built
+      p: "Readings are compared with the CPCB class B limits for organised outdoor bathing: dissolved oxygen at least {do_min} mg/l, BOD at most {bod_max} mg/l, pH from 6.5 to 8.5. The score out of 100 adds five parts."
+      items:
+        - t: "Oxygen stress, up to {oxygen} points"
+          d: "Share of DO readings below {do_min} mg/l, plus points when DO fell below 2 or read 0."
+        - t: "Organic load, up to {organic} points"
+          d: "Share of BOD readings above {bod_max} mg/l, plus points when BOD during immersion reached three times the limit."
+        - t: "pH, up to {ph} points"
+          d: "Share of pH readings outside 6.5 to 8.5."
+        - t: "Immersion impact, up to {impact} points"
+          d: "How often the water was worse during immersion than before it. Only pairs with both readings count."
+        - t: "Recovery, up to {recovery} points"
+          d: "How often the water was still worse one week after than before immersion."
+        - t: Priority tiers
+          d: "Priority 1 at {p1} or more, Priority 2 from {p2}, Priority 3 below {p2}. There is no green tier: BOD was above the limit in {bod_above} of {bod_valid} readings, so the ranking is relative."
+        - t: Rank range
+          d: "Ranks are recomputed under {runs} random weight sets. A short range means the rank holds whatever the weights. A long range means the ghats around it are close."
+    - id: badges
+      h: What the badges mean
+      items:
+        - t: Limited data
+          d: "Fewer than {limited} of the expected DO and BOD readings exist. The rank is kept, but it rests on less evidence."
+        - t: Identity uncertain
+          d: "The Ganesh tables say Kamla Park kund and the Durga tables say Lower Lake ghat. They may be two places."
+        - t: Metals spike
+          d: "A metal reading during immersion was at least 5 times the reading before, or went from BDL to a number. Metals have no class B limit and give no points. The data does not establish the cause."
+        - t: Possible reporting-limit value
+          d: "The same metal value appears at every ghat and phase of one festival, which looks like a laboratory reporting limit. It is left out of the spike check."
+        - t: Rank differs in Durga-only view
+          d: "The ghat moves by 2 or more places when only Durga tests are used."
+        - t: No history
+          d: "The ghat has no readings in the 2023 to 2025 reports. The action plan lists a baseline test before {event}."
+    - id: glossary
+      h: Words used
+      items:
+        - t: Dissolved oxygen (DO)
+          d: "Oxygen dissolved in the water. Fish and other aquatic life need it. Class B asks for at least {do_min} mg/l."
+        - t: BOD
+          d: "Biochemical oxygen demand: how much oxygen organic waste uses up as it breaks down. Class B allows at most {bod_max} mg/l."
+        - t: pH
+          d: "How acid or alkaline the water is. 7 is neutral. The class B range is 6.5 to 8.5."
+        - t: BDL
+          d: "Below detection limit: very low, but not zero and not missing. Shown as BDL, never as 0."
+        - t: Not sampled
+          d: "The report shows a blank, _, * or ** for that test. It counts as missing, never as clean, and is drawn hatched."
+        - t: No table in report
+          d: "The report has no table at all for that ghat and festival, for example Bairagarh and Malikhedi in Durga 2025."
+        - t: CPCB class B
+          d: "The Central Pollution Control Board water-quality class for organised outdoor bathing. It is the listed use nearest to people entering the water at a ghat."
+        - t: Data coverage
+          d: "Valid DO and BOD readings as a share of the readings expected over three years, two festivals and three phases."
+        - t: Units
+          d: "The reports print no units. The standard unit for each test is assumed and marked 'unit assumed'."
+    - id: faq
+      h: Questions officers ask
+      items:
+        - t: Why is no ghat shown in green?
+          d: "BOD was above the class B limit in {bod_above} of {bod_valid} readings across all ghats. No ghat meets the limits throughout, so the tool shows priorities, not passes."
+        - t: Can I rely on ranks 2 to 6?
+          d: "Treat close ranks as a group. Check the rank range on each row: where ranges overlap, the order between those ghats depends on the weights."
+        - t: Does this say the water harms people?
+          d: "No. It compares readings with CPCB class B limits only. Total coliform, the class B bacteria test, is not in these reports."
+        - t: Is anything sent over the internet?
+          d: "No. There is no account, no tracking and no network call. Report pages and WhatsApp open only when you click their links."
+        - t: What if a ghat has no data?
+          d: "A designated ghat with no readings appears as No history at the bottom of the ranking, and the action plan lists a baseline test."
+    - id: admin
+      h: For the department
+      items:
+        - t: Change weights or limits
+          d: "Edit rules.yaml, then run .venv/bin/python -m src.build. No number is written into the code."
+        - t: Add or change a ghat
+          d: "Edit ghats.yaml, for example to mark a ghat as designated for 2026, then rebuild."
+        - t: Add next year's readings
+          d: "Append the rows to the Bhopal CSV in the same columns, add the year in rules.yaml and the report file in src/sources.py, then rebuild and run the tests."
+        - t: Host it
+          d: "Copy the docs folder to any web server, such as an MPSeDC server or GitHub Pages. It also opens straight from disk."
+        - t: Check the numbers
+          d: "docs/VERIFICATION.md lists 20 readings with their report pages for a second person to check against the PDF."
+    - id: access
+      h: Accessibility
+      items:
+        - t: Keyboard
+          d: "Every control works with Tab and Enter. A clear outline shows where you are. Skip to main content is the first stop."
+        - t: Text size and zoom
+          d: "Use A− A A+, or zoom the browser to 200 percent. Nothing is cut off."
+        - t: Not colour alone
+          d: "Every result also has words: Outside limit, Within limit, BDL or Not sampled. Missing readings are hatched."
+        - t: Screen readers
+          d: "Pages use headings, tables with column headers and labelled charts. The tables below each chart hold the same numbers."
+        - t: Less motion
+          d: "If your device asks for reduced motion, nothing on the page moves."
+site:                       # BR-64 general measures at every site, from the CPCB guidelines, not from the readings
+  title: Standard measures at every ghat
+  tag: CPCB 2010
+  note: "Standard measures come from the CPCB general guidelines for idol immersion (2010). They apply to every site and do not come from the readings."
+  before:
+    - Barricade and mark the immersion points.
+    - Set up separate collection for flowers, cloth and decorations, biodegradable and non-biodegradable apart.
+  during:
+    - Take off flowers, cloth and decorations before the idol goes into the water.
+    - Do not burn the collected material.
+  after:
+    - Remove leftover idol material and debris within 48 hours of immersion.

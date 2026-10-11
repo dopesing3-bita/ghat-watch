@@ -1,5 +1,12 @@
 # BR-50 ghat register. The officer can edit this file and rebuild.
-# designated_2026: yes | unknown. Source: Free Press Journal reports (see README). Confirm with BMC.
+# designated_2026: yes | unknown. Confirm with BMC.
+# Sources (Free Press Journal, checked 11 Oct 2026):
+#  - 26 Feb 2026: "At present, immersion arrangements are made at Bairagarh, Malikhadi, Prempura, Khatlapura,
+#    Hathai Kheda Dam and Arch Bridge ghats." New dedicated ghats under construction: Malikhedi, Barkatullah
+#    University campus, Sanjeev Nagar, Neelbadh.
+#  - 22 Sep 2026: BMC designated the same six for Ganesh immersion. Additional commissioners were also posted at
+#    Shahpura and Rani Kamalapati ghats, so those two may be in use: confirm with BMC.
+# If a new ghat opens for Durga 2026, add it here with in_data: false. It then gets a No history row and a baseline test.
 # name_hi lines need approval.  REVIEW: Hindi reviewer
 ghats:
   - id: bairagarh
@@ -8,53 +15,53 @@ ghats:
     water_body: Upper Lake
     in_data: true
     designated_2026: "yes"
-    source: Free Press Journal
+    source: Free Press Journal, 26 Feb and 22 Sep 2026
   - id: khatlapura
     site: Khatlapura ghat
     name_hi: खटलापुरा घाट   # REVIEW: Hindi reviewer
     water_body: Lower Lake
     in_data: true
     designated_2026: "yes"
-    source: Free Press Journal
+    source: Free Press Journal, 26 Feb and 22 Sep 2026
   - id: prempura
     site: Prempura ghat
     name_hi: प्रेमपुरा घाट   # REVIEW: Hindi reviewer
     water_body: Upper Lake
     in_data: true
     designated_2026: "yes"
-    source: Free Press Journal
+    source: Free Press Journal, 26 Feb and 22 Sep 2026
   - id: rani-kamlapati
     site: Rani Kamlapati ghat / Kamla Park kund
     name_hi: रानी कमलापति घाट / कमला पार्क कुंड   # REVIEW: Hindi reviewer
     water_body: Lower Lake
     in_data: true
     designated_2026: unknown
-    source: not on the news list, confirm with BMC
+    source: not on the news list of six; officers posted there for Ganesh 2026 (FPJ 22 Sep 2026), confirm with BMC
   - id: hathaikheda
     site: Hathaikheda dam / kund
     name_hi: हथाईखेड़ा डैम / कुंड   # REVIEW: Hindi reviewer
     water_body: Hathaikheda dam
     in_data: true
     designated_2026: "yes"
-    source: Free Press Journal
+    source: Free Press Journal, 26 Feb and 22 Sep 2026
   - id: malikhedi
     site: Malikhedi kund
     name_hi: मालीखेड़ी कुंड   # REVIEW: Hindi reviewer
     water_body: Kund
     in_data: true
     designated_2026: "yes"
-    source: Free Press Journal
+    source: Free Press Journal, 26 Feb and 22 Sep 2026
   - id: shahpura
     site: Shahpura lake ghat
     name_hi: शाहपुरा झील घाट   # REVIEW: Hindi reviewer
     water_body: Shahpura Lake
     in_data: true
     designated_2026: unknown
-    source: not on the news list, confirm with BMC
+    source: not on the news list of six; officers posted there for Ganesh 2026 (FPJ 22 Sep 2026), confirm with BMC
   - id: arch-bridge
     site: Arch Bridge
     name_hi: आर्च ब्रिज   # REVIEW: Hindi reviewer
     water_body: not in the reports
     in_data: false
     designated_2026: "yes"
-    source: Free Press Journal
+    source: Free Press Journal, 26 Feb and 22 Sep 2026
