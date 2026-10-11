@@ -1,6 +1,6 @@
 # Ghat Watch
 
-**Team:** _TODO team name_ · **Members:** _TODO name (role), name (role), name (role), name (role)_
+**Team:** SWAT · **Members:** _TODO name (role), name (role), name (role), name (role)_
 **Track:** Track 2, Visarjan Ghat Watch · Claude Impact Lab Bhopal, 11 October 2026
 **Live:** [ghat-watch-six.vercel.app](https://ghat-watch-six.vercel.app) · mirror on [GitHub Pages](https://dopesing3-bita.github.io/ghat-watch/) · Hindi: [ghat-watch-six.vercel.app/?lang=hi](https://ghat-watch-six.vercel.app/?lang=hi)
 **Built for:** the Bhopal Municipal Corporation officer who plans Durga visarjan on **20 October 2026** and decides where to send extra cleaning, aeration and water testing.
